@@ -64,3 +64,44 @@ nav a:hover{
 .buton{
   white-space: normal;
 }
+
+.wide {
+  letter-spacing: 4px;
+}
+
+h2 {
+  font-size: 30px;
+}
+
+section{
+  max-width:800px;
+  box-sizing: inherit;
+}
+
+section p.justify{
+  width: auto;
+  margin: auto;
+  padding: 10px 100px 10px 100px;
+}
+
+.opacity{
+  opacity: 0.60;
+}
+
+.justify{
+  text-align: justify;
+}
+
+.center {
+  text-align: center;
+}
+.content {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 2000px;
+  margin-top: 46px
+}
+.padding-64 {
+  padding-top: 64px !important;
+  padding-bottom: 64px !important
+}
