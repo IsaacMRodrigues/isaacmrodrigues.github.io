@@ -126,6 +126,13 @@ section li{
   height: 48px;
 }
 
+.iconcontato{
+  margin-right: 10px;
+  float: left;
+  width: 24px;
+  height: 24px;
+}
+
 .opacity{
   opacity: 0.60;
 }
