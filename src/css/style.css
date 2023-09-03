@@ -11,7 +11,7 @@ body{
 
 header{
   top: 0;
-  background-color: #232323;
+  background-color: rgba(20,18,18,255);
   color: white;
   height: 8vh;
   width: 100%;
@@ -25,7 +25,7 @@ header{
  font-family: 'Times New Roman', Times, serif; 
 }
 
-ul{
+.ulpadrao{
   color: #60ec84;
   font-size: 18px;
   list-style: none;
@@ -37,7 +37,7 @@ ul{
 }
 
 
-li{
+.lista{
   letter-spacing: 3px;
   margin-left: 32px;
 }
@@ -85,6 +85,10 @@ nav a:hover{
   letter-spacing: 4px;
 }
 
+.spctop{
+  margin-top: 15px;
+}
+
 h2 {
   font-size: 30px;
 }
@@ -100,11 +104,12 @@ section{
   box-sizing: inherit;
 }
 
-section img{
+.imgredonda{
   width: 200px;
   height: 200px;
   border-radius: 50%;
 }
+
 
 section p.justify{
   width: auto;
@@ -116,21 +121,27 @@ section ul{
   justify-content: center;
 }
 
-section li{
+li{
+  letter-spacing: 3px;
+  margin-left: 75px;
+  padding-left: 0px;
+
+}
+
+
+.lisection{
     letter-spacing: 3px;
     margin-left: 32px;
 }
 
-.test{
-  width: 48px;
-  height: 48px;
-}
+
 
 .iconcontato{
   margin-right: 10px;
   float: left;
   width: 24px;
   height: 24px;
+  border-radius: 0px;
 }
 
 .opacity{
@@ -160,13 +171,13 @@ section li{
   padding-bottom: 64px !important
 }
 .black-ground .cardBox{
-  background-color: white;
-  color: black;
+  background-color: #505050;
+  color: #60ec84;
 }
 
 .btn-card:hover {
-  background-color: inherit;
-  color: inherit;
+  background-color: rgb(56, 56, 56);
+  color: #60ec84;
 }
 
 .card-container {
@@ -180,12 +191,13 @@ section li{
   font-size: 1.7em;
 }
 .black-ground{
-  background-color: #232323;
+  background-color: rgba(20,18,18,255);
   color: white;
 }
 
 .white-ground{
-  background-color: #8c8c8c;
+  
+  background-color: rgba(28,28,28,255);
   color: black;
 }
 
@@ -208,10 +220,22 @@ footer{
   flex-shrink: 1;
 }
 
+.sobremim{
+  font-size: 18px;
+  width: 50%;
+}
+
+.pcenter{
+  margin-left: 45%;
+  display: flex;
+  align-items: center;
+}
+
+
 
 .btn-card {
   background-color: black;
-  color: #fff;
+  color: #dfdfdf;
   padding: 8px 16px;
   border: none;
   border-radius: 4px;
@@ -230,6 +254,10 @@ footer{
   float: left !important;
 }
 
+.test{
+  width: 48px;
+  height: 48px;
+}
 
 .padding-large {
   padding: 12px 24px !important;

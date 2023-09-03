@@ -12,49 +12,76 @@
     <header>
         <nav>
             <a href="#inicio"><img class="logoimg" src="/src/images/svg20.png" alt="Logo"></a>
-            <ul>
-                <li><a href="#sobre"> SOBRE</a></li>
-                <li><a href="#projetos"> PROJETOS</a></li>
-                <li><a href="#contato"> CONTATO</a></li>
+            <ul class="ulpadrao">
+                <li class="lista"><a href="#sobre"> SOBRE</a></li>
+                <li class="lista"><a href="#projetos"> PROJETOS</a></li>
+                <li class="lista"><a href="#contato"> CONTATO</a></li>
             </ul>
         </nav>
     </header>
     <div id="inicio" class="content">
         <section class="container content center padding-64" id="sobre">
-            <img src="./src/images/teste.png" alt="Profile">
-            <h2 class="wide">SOBRE MIM</h2>
-            <p class="opacity"><i>Desenvolvedor Backend</i></p>
-            <p class="justify center">
-                Atualmente faço um curso tecnico de Informatica para Internet no Senai no periodo noturno,
-                e sou formado em Analise e Desenvolvimento de Sistemas. Tenho conhecimento avançado em Logica de Programação
-                e Programação Orientada a Objetoss.
-                <img class="test" src="./src/images/java.svg" alt="Java">
-                <img class="test" src="./src/images/html.svg" alt="HTML">
-                <img class="test" src="./src/images/css.svg" alt="CSS">
-            </p>
+            <img class="spctop imgredonda" src="./src/images/teste.png" alt="Profile">
+            
+            <p><h2 class="opacity"><i>Desenvolvedor Backend</i></h2></p>
+            <div class="sobremim to-left">
+                <p><h2 class="opacity">SOBRE MIM </h2></p>
+                <p class="justify">
+                    Atualmente faço um curso tecnico de Informatica para Internet no Senai no periodo noturno,
+                    e sou formado em Analise e Desenvolvimento de Sistemas.
+                </p>
+                
+                <ul class="justify">
+                    <li>Nome: Isaac Martins Rodrigues.</li>
+                    <li>Idade: 21 Anos.</li>
+                    <li>Endereço: São Gonçalo do Rio Abaixo.</li>
+                </ul>
+
+            </div>
+            <div class="sobremim to-right center">
+                <p><h2 class="opacity"> CONHECIMENTOS </h2></p>
+                <ul class="ulpadrao">
+                    <li class="lista lisection"><p class="pcenter"><img class="test" src="./src/images/java.svg" alt="Java"> Java</p></li>
+                    <li class="lista lisection"><p class="pcenter"><img class="test" src="./src/images/html.svg" alt="HTML"> HTML </p></li>
+                    <li class="lista lisection"><p class="pcenter"><img class="test" src="./src/images/css.svg" alt="CSS"> CSS </p></li>
+                    <li class="lista lisection"><p class="pcenter"><img class="test" src="./src/images/js.png" alt="JS"> JavaScript </p></li>
+                    
+            </ul>
+            <ul class="ulpadrao">
+                <li class="lista lisection"><p class="pcenter"><img class="test" src="./src/images/java.svg" alt="Java"> SpringBoot</p></li>
+                <li class="lista lisection"><p class="pcenter"><img class="test" src="./src/images/html.svg" alt="HTML"> PostgreeSql </p></li>
+                <li class="lista lisection"><p class="pcenter"><img class="test" src="./src/images/css.svg" alt="CSS"> CSS </p></li>
+                <li class="lista lisection"><p class="pcenter"><img class="test" src="./src/images/js.png" alt="JS"> JavaScript </p></li>
+                
+        </ul>
+            </div>
         </section>
         <section id="projetos" class="container content center padding-64 black-ground">
             <h2 class="wide greencor">PROJETOS</h2>
             <div class="card-container">
                 <div class="cardBox">
                     <h2>App Inventor</h2>
-                    <p>Meus projetos para celular</p>
-                    <a class="btn-card" type="button" href="https://github.com/IsaacMRodrigues/isaac-app-inventor-projects">Go to</a>
+                    <p class="opacity">Meus projetos para celular</p>
+                    <a class="btn-card" type="button"
+                        href="https://github.com/IsaacMRodrigues/isaac-app-inventor-projects" target="_blank">Go to</a>
                 </div>
                 <div class="cardBox">
                     <h2>Cadastro de Eventos</h2>
-                    <p>Primeiro Projeto usando SpringBoot.</p>
-                    <a class="btn-card" type="button" href="https://github.com/IsaacMRodrigues/Projeto-SpringBoot">Go to</a>
+                    <p class="opacity">Primeiro Projeto usando SpringBoot.</p>
+                    <a class="btn-card" type="button" href="https://github.com/IsaacMRodrigues/Projeto-SpringBoot"
+                        target="_blank">Go to</a>
                 </div>
                 <div class="cardBox">
                     <h2>Collections Java</h2>
-                    <p>Aprendendo sobre collections do java</p>
-                    <a class="btn-card" type="button" href="https://github.com/IsaacMRodrigues/collections-java-api-2023">Go to</a>
+                    <p class="opacity">Aprendendo sobre collections do java</p>
+                    <a class="btn-card" type="button"
+                        href="https://github.com/IsaacMRodrigues/collections-java-api-2023" target="_blank">Go to</a>
                 </div>
                 <div class="cardBox">
                     <h2>API Departamento</h2>
-                    <p>Criando API de departamentos</p>
-                    <a class="btn-card" type="button" href="https://github.com/IsaacMRodrigues/API_Departamento">Go to</a>
+                    <p class="opacity">Criando API de departamentos</p>
+                    <a class="btn-card" type="button" href="https://github.com/IsaacMRodrigues/API_Departamento"
+                        target="_blank">Go to</a>
                 </div>
             </div>
         </section>
@@ -80,10 +107,13 @@
         </section>
         <section id="contato" class="container content center padding-32 black-ground">
             <h2 class="wide greencor">CONTATO</h2>
-            <ul>
-                <li><img class="iconcontato" src="./src/images/email.png" alt="Email">isaacmrodrigues2019@gmail.com</li>
-                <li><img class="iconcontato" src="./src/images/whatsapp.svg" alt="WhatsApp">+5531997539201</li>
-                <li><a href="https://www.linkedin.com/in/isaacmrodrigues"> LINKEDIN</a></li>
+            <ul class="ulpadrao">
+                <li class="lista lisection"><img class="iconcontato" src="./src/images/email.png"
+                        alt="Email">isaacmrodrigues2019@gmail.com</li>
+                <li class="lista lisection"><a href="https://wa.me/qr/IUFDK3ITFLZ4C1" target="_blank"><img class="iconcontato"
+                            src="./src/images/whatsapp.svg" alt="WhatsApp">+5531997539201</a></li>
+                <li class="lista lisection"><a href="https://www.linkedin.com/in/isaacmrodrigues" target="_blank"><img
+                            class="iconcontato" src="./src/images/linkedin.png" alt="Linkedin"> LINKEDIN</a></li>
             </ul>
 
         </section>
