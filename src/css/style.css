@@ -1,296 +1,65 @@
-body{
-  padding: 0;
-  margin: 0;
+.custom-letter-spacing {
+  letter-spacing: 0.2em;
 }
 
-body{
-  font-size: 15px;
-  line-height: 1.5;
-  font-family:Arial, Helvetica, sans-serif;
+.logo-img {
+  width: 91px;
+  height: 35px;
+  ;
 }
 
-header{
-  top: 0;
-  background-color: rgba(20,18,18,255);
-  color: white;
-  height: 8vh;
-  width: 100%;
-  position: fixed;
-  z-index: 1;
-  display: block;
-}
-
-#idLogo{
-  font-size: 50px;
- font-family: 'Times New Roman', Times, serif; 
-}
-
-.ulpadrao{
-  color: #60ec84;
-  font-size: 18px;
-  list-style: none;
-  display: flex;
-}
-
-.greencor{
-  color: #60ec84;
-}
-
-
-.lista{
-  letter-spacing: 3px;
-  margin-left: 32px;
-}
-
-nav {
-  margin-left: 3%;
-  margin-right: 3%;
-  height: 8vh;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-a{
-  color: inherit;
-  text-decoration: none;
-  font-size: inherit;
-}
-a:hover{
-  color: #60ec84;
-  text-decoration: solid;
-}
-
-nav a{
-  color: inherit;
-  text-decoration: none;
-  font-size: inherit;
-}
-
-nav a:hover{
-  color: #60ec84;
-  text-decoration: solid;
-}
-
-.card{
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.15),
-  0 2px 10px 0 rgba(0, 0, 0, 0.12);
-}
-
-.buton{
-  white-space: normal;
-}
-
-.wide {
-  letter-spacing: 4px;
-}
-
-.spctop{
-  margin-top: 15px;
-}
-
-h2 {
-  font-size: 30px;
-}
-
-img{
-  width: 600px;
-  height: 400px;
-}
-
-.logoimg{
-  width: 136.50px;
-  height: 53px;
-}
-
-section{
-  height: 800px;
-  max-width:800px;
-  box-sizing: inherit;
-}
-
-.imgredonda{
+.perfil-img {
   width: 200px;
   height: 200px;
   border-radius: 50%;
 }
 
-
-section p.justify{
-  width: auto;
-  margin: auto;
-  padding: 10px 100px 10px 100px;
+#inicio {
+  margin-top: 70px;
 }
 
-section ul{
-  justify-content: center;
-}
-
-li{
-  letter-spacing: 3px;
-  margin-left: 75px;
-  padding-left: 0px;
-
-}
-
-
-.lisection{
-    letter-spacing: 3px;
-    margin-left: 32px;
-}
-
-
-
-.iconcontato{
-  margin-right: 10px;
-  float: left;
-  width: 24px;
-  height: 24px;
-  border-radius: 0px;
-}
-
-.opacity{
-  opacity: 0.60;
-}
-
-.justify{
-  text-align: justify;
-}
-
-.center {
-  text-align: center;
-}
-.container {
-  padding: 0.01em 16px;
-  justify-content: center;
-  align-items: center;
-}
 .content {
   margin-left: auto;
   margin-right: auto;
   max-width: 2000px;
   margin-top: 46px
 }
-.padding-64 {
-  padding-top: 64px !important;
-  padding-bottom: 64px !important
-}
-.black-ground .cardBox{
-  background-color: #505050;
-  color: #ffffff;
+
+.center {
+  text-align: center;
 }
 
-.btn-card:hover {
-  background-color: rgb(56, 56, 56);
-  color: #60ec84;
+div{
+  text-align: justify;
 }
 
-.card-container {
-  margin-top: 75px;
-  display: flex;
-  gap: 20px;
-  justify-content: center;
-  align-items: center;
+/* section{
+  height: 800px;
+  max-width:800px;
+  box-sizing: inherit;
+} */
+
+.full-height-section {
+  height: 100vh;
 }
 
-#logo{
-  font-size: 1.7em;
-}
-.black-ground{
-  background-color: rgba(20,18,18,255);
+.color-white{
   color: white;
 }
 
-.white-ground{
-  
-  background-color: rgba(28,28,28,255);
-  color: black;
+.limit-metad{
+  max-width: 50%;
 }
 
-footer{
-  margin-top: 0;
-  background-color: #505050;
-  font-size: 10px;
+.icon-contat{
+  width: 20px;
+  height: 20px;
+}
+.icon-justify-contat{
+  width: 25px;
+  height: 25px;
 }
 
-.whitecor{
-  color: #ffffff;
-}
-
-.cardBox {
-  color: #ffffff;
-  background-color: #505050;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
-  padding: 20px;
-  width: 300px;
-  height: 200px;
-  max-width:300px;
-  max-height: 200px;
-  text-align: center;
-  flex-shrink: 1;
-}
-
-.cardBoxJogos {
-  color: #ffffff;
-  background-color: #505050;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
-  width: 600px;
-  height: 400px;
-  max-width:600px;
-  max-height: 400px;
-  text-align: center;
-  flex-shrink: 1;
-}
-
-
-
-.sobremim{
-  letter-spacing: 3px;
-  font-size: 19px;
-  width: 50%;
-}
-
-.pcenter{
-  margin-left: 0%;
-  display: flex;
-  align-items: center;
-}
-
-
-
-.btn-card {
-  background-color: black;
-  color: #dfdfdf;
-  padding: 8px 16px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  font-weight: bold;
-  text-decoration: none;
-}
-#inicio{
-  margin-top: 50px;
-}
-.to-right {
-  float: right !important;
-}
-
-.to-left {
-  float: left !important;
-}
-
-.whiteletter{
-  color: white;
-}
-
-.test{
-  width: 48px;
-  height: 48px;
-  margin-right: 5px;
-}
-
-.padding-large {
-  padding: 12px 24px !important;
+.margin-topo{
+  margin-top: 150px;
 }

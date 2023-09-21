@@ -1,174 +1,201 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
-    <title>Isaac Martins Rodrigues</title>
-    <link rel="stylesheet" href="/src/css/style.css">
-    <link rel="icon" href="/src/images/iconlogo.png">
-    <script src="/src/script/script.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="./src/css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <title>Portfolio Isaac</title>
 </head>
 
-<body class="white-ground">
-    <header>
-        <nav>
-            <a href="#inicio"><img class="logoimg" src="/src/images/svg20.png" alt="Logo"></a>
-            <ul class="ulpadrao">
-                <li class="lista"><a href="#sobre"> SOBRE</a></li>
-                <li class="lista"><a href="#projetos"> PROJETOS</a></li>
-                <li class="lista"><a href="#artigos"> ARTIGOS</a></li>
-                <li class="lista"><a href="#contato"> CONTATO</a></li>
-            </ul>
-        </nav>
-    </header>
-    <div id="inicio" class="content">
-        <section class="container content center padding-64" id="sobre">
-            <img class="spctop imgredonda" src="./src/images/perfil.jpeg" alt="Profile">
-
-            <p>
-            <h2 class="opacity whiteletter"><i>Desenvolvedor Backend</i></h2>
-            </p>
-            <div class="sobremim to-left whiteletter">
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top custom-letter-spacing">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#inicio">
+                <img src="./src/images/svg20.png" class="logo-img" alt="Logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar"
+                aria-labelledby="offcanvasDarkNavbarLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Menu</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
+                        aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#inicio">SOBRE</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#projetos">PROJETOS</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#artigos">ARTIGOS</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <section id="inicio" class="custom-letter-spacing full-height-section">
+        <div class="content center">
+            <img src="./src/images/perfil.jpeg" class="perfil-img">
+            <h1>Desenvolvedor Backend</h1>
+        </div>
+        <div class="d-flex flex-row mb-3 container center">
+            <div class="p-5 limit-metad ml-6">
                 <p>
-                <h2 class="opacity">SOBRE MIM </h2>
+                <h2 class="center">SOBRE MIM</h2>
                 </p>
-                <p class="justify">
-                    Atualmente faço um curso tecnico de Informatica para Internet no Senai no periodo noturno,
-                    e sou formado em Analise e Desenvolvimento de Sistemas.
-                </p>
+                <p>Atualmente faço um curso tecnico de Informatica para Internet no Senai no periodo noturno, e sou
+                    formado
+                    em Analise e Desenvolvimento de Sistemas.</p>
 
-                <ul class="justify">
+                <ul>
                     <li>Nome: Isaac Martins Rodrigues.</li>
                     <li>Idade: 21 Anos.</li>
                     <li>Endereço: São Gonçalo do Rio Abaixo/MG.</li>
                 </ul>
-
             </div>
-            <div class="sobremim to-right whiteletter">
+            <div class="p-5 limit-metad">
                 <p>
-                <h2 class="opacity"> CONHECIMENTOS </h2>
+                <h2 class="center">CONHECIMENTOS</h2>
                 </p>
-                <ul class="ulpadrao whiteletter">
-                    <li class="lista lisection">
-                        <p class="pcenter"><img class="test" src="./src/images/java.svg" alt="Java"> Java</p>
-                    </li>
-                    <li class="lista lisection">
-                        <p class="pcenter"><img class="test" src="./src/images/html.svg" alt="HTML"> HTML </p>
-                    </li>
-                    <li class="lista lisection">
-                        <p class="pcenter"><img class="test" src="./src/images/css.svg" alt="CSS"> CSS </p>
-                    </li>
+                <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="25"
+                    aria-valuemin="0" aria-valuemax="100">
+                    <div class="progress-bar" style="width: 75%">Java</div>
+                </div>
+                <br>
+                <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="25"
+                    aria-valuemin="0" aria-valuemax="100">
+                    <div class="progress-bar" style="width: 50%">SpringBoot</div>
+                </div>
+                <br>
+                <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="25"
+                    aria-valuemin="0" aria-valuemax="100">
+                    <div class="progress-bar" style="width: 45%">PostgreeSql</div>
+                </div>
+                <br>
+                <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="25"
+                    aria-valuemin="0" aria-valuemax="100">
+                    <div class="progress-bar" style="width: 80%">HTML</div>
+                </div>
+                <br>
+                <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="25"
+                    aria-valuemin="0" aria-valuemax="100">
+                    <div class="progress-bar" style="width: 50%">CSS</div>
+                </div>
+                <br>
+                <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="25"
+                    aria-valuemin="0" aria-valuemax="100">
+                    <div class="progress-bar" style="width: 35%">JavaScript</div>
+                </div>
 
-                </ul>
-                <ul class="ulpadrao whiteletter">
-                    <li class="lista lisection">
-                        <p class="pcenter"><img class="test" src="./src/images/js.png" alt="JS"> JavaScript </p>
-                    </li>
-                    <li class="lista lisection">
-                        <p class="pcenter"><img class="test" src="./src/images/spring.svg" alt="Java"> SpringBoot</p>
-                    </li>
-                    <li class="lista lisection">
-                        <p class="pcenter"><img class="test" src="./src/images/postgree.svg" alt="HTML"> PostgreeSql
-                        </p>
-                    </li>
+            </div>
+        </div>
+    </section>
+    <section id="projetos" class="full-height-section">
+        <div class="row row-cols-1 row-cols-md-2 g-4 p-5">
+            <div class="col">
+                <div class="card">
+                    <div class="card-body center">
+                        <h5 class="card-title">App Inventor</h5>
+                        <p class="card-text">Meus aplicativos para celular.</p>
+                        <a href="#" class="btn btn-primary">Saiba mais</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <div class="card-body center">
+                        <h5 class="card-title">Cadastro de Eventos</h5>
+                        <p class="card-text">Aplicação de cadastro de eventos usando SpringBoot.</p>
+                        <a href="#" class="btn btn-primary">Saiba mais</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <div class="card-body center">
+                        <h5 class="card-title">Collections Java</h5>
+                        <p class="card-text">Aprendendo sobre collections.</p>
+                        <a href="#" class="btn btn-primary">Saiba mais</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <div class="card-body center">
+                        <h5 class="card-title">API Departamento</h5>
+                        <p class="card-text">Api de um departamento.</p>
+                        <a href="#" class="btn btn-primary">Saiba mais</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="artigos" class="bg-dark color-white full-height-section mt-5 pt-5">
+        <div id="carouselExampleCaptions" class="carousel slide">
+            
+            <div class="carousel-inner mt-5 pt-5">
+                <div class="carousel-item active">
+                    <div class="carousel-content center margin-topo">
+                        <h3>Jogos</h3>
+                        <p>Ultimos jogos que joguei.</p>
+                        <a href="./src/pages/articles.html" class="btn btn-primary">Saiba mais</a>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="carousel-content center margin-topo">
+                        <h3>Filmes</h3>
+                        <p>Filmes que achei bom.</p>
+                        <a href="./src/pages/articles.html" class="btn btn-primary">Saiba mais</a>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="carousel-content center margin-topo">
+                        <h3>PC</h3>
+                        <p>Config do meu pc.</p>
+                        <a href="./src/pages/articles.html" class="btn btn-primary">Saiba mais</a>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev margin-topo" type="button" data-bs-target="#carouselExampleCaptions"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next margin-topo" type="button" data-bs-target="#carouselExampleCaptions"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+            
+        </div>
 
-                </ul>
-            </div>
-        </section>
-        <section id="projetos" class="container content center padding-64 black-ground">
-            <h2 class="wide">PROJETOS</h2>
-            <div class="card-container">
-                <div class="cardBox">
-                    <h2>App Inventor</h2>
-                    <p class="opacity">Meus projetos para celular</p>
-                    <a class="btn-card" type="button"
-                        href="https://github.com/IsaacMRodrigues/isaac-app-inventor-projects" target="_blank">Go to</a>
-                </div>
-                <div class="cardBox">
-                    <h2>Cadastro de Eventos</h2>
-                    <p class="opacity">Primeiro Projeto usando SpringBoot.</p>
-                    <a class="btn-card" type="button" href="https://github.com/IsaacMRodrigues/Projeto-SpringBoot"
-                        target="_blank">Go to</a>
-                </div>
-                <div class="cardBox">
-                    <h2>Collections Java</h2>
-                    <p class="opacity">Aprendendo sobre collections do java</p>
-                    <a class="btn-card" type="button"
-                        href="https://github.com/IsaacMRodrigues/collections-java-api-2023" target="_blank">Go to</a>
-                </div>
-                <div class="cardBox">
-                    <h2>API Departamento</h2>
-                    <p class="opacity">Criando API de departamentos</p>
-                    <a class="btn-card" type="button" href="https://github.com/IsaacMRodrigues/API_Departamento"
-                        target="_blank">Go to</a>
-                </div>
-            </div>
-            <div class="card-container">
-                <div class="cardBox">
-                    <h2>Em Desenvolvimento</h2>
-                    <p class="opacity"> . . .</p>
-                    <a class="btn-card" type="button"
-                        href="#projetos">Go to</a>
-                </div>
-                <div class="cardBox">
-                    <h2>Em Desenvolvimento</h2>
-                    <p class="opacity"> . . .</p>
-                    <a class="btn-card" type="button"
-                        href="#projetos">Go to</a>
-                </div>
-                <div class="cardBox">
-                    <h2>Em Desenvolvimento</h2>
-                    <p class="opacity"> . . .</p>
-                    <a class="btn-card" type="button"
-                        href="#projetos">Go to</a>
-                </div>
-                <div class="cardBox">
-                    <h2>Em Desenvolvimento</h2>
-                    <p class="opacity"> . . .</p>
-                    <a class="btn-card" type="button"
-                        href="#projetos">Go to</a>
-                </div>
-            </div>
-        </section>
-        <section id="artigos" class="container content center padding-64">
-            <h2 class="wide whitecor">ARTIGOS</h2>
-            <div class="card-container">
-                <div class="cardBox">
-                    <h2>Jogos</h2>
-                    <p>Ultimos jogos que joguei.</p>
-                    <a class="btn-card" type="button" href="./src/pages/artigo-topjogos.html">Ver</a>
-                </div>
-                <div class="cardBox">
-                    <h2>Filmes</h2>
-                    <p>Filmes que achei bom</p>
-                    <a class="btn-card" type="button" href="./src/pages/artigo-topfilmes.html">Ver</a>
-                </div>
-                <div class="cardBox">
-                    <h2>PC</h2>
-                    <p>Config do meu PC</p>
-                    <a class="btn-card" type="button" href="./src/pages/artigo-configpc.html">Ver</a>
-                </div>
-            </div>
-        </section>
-        <section id="contato" class="container content center padding-32 black-ground">
-            <h2 class="wide">CONTATO</h2>
-            <ul class="ulpadrao whitecor">
-                <li class="lista lisection"><img class="iconcontato" src="./src/images/email.svg"
-                        alt="Email">isaacmrodrigues2019@gmail.com</li>
-                <li class="lista lisection"><a href="https://wa.me/qr/IUFDK3ITFLZ4C1" target="_blank"><img
-                            class="iconcontato" src="./src/images/whatsapp.svg" alt="WhatsApp">+5531997539201</a></li>
-                <li class="lista lisection"><a href="https://www.linkedin.com/in/isaacmrodrigues" target="_blank"><img
-                            class="iconcontato" src="./src/images/linkedin.png" alt="Linkedin"> LinkedIn</a></li>
-                <li class="lista lisection"><a href="https://github.com/IsaacMRodrigues" target="_blank"><img
-                            class="iconcontato" src="./src/images/git.svg" alt="GitHub"> GitHub</a></li>
-            </ul>
-        </section>
+    </section>
+    <div class="center fixed-bottom mb-5">
+        <div class="btn-group" role="group" aria-label="Basic outlined example">
+            <button type="button" class="btn"><img src="./src/images/linkedin.png" class="icon-contat"></button>
+            <button type="button" class="btn"><img src="./src/images/github.svg"
+                    class="icon-contat icon-justify-contat"></button>
+            <button type="button" class="btn"><img src="./src/images/whatsapp.svg"
+                    class="icon-contat icon-justify-contat"></button>
+        </div>
     </div>
-    <footer class="container content center">
-        <p class="center opacity wide greencor">By Isaac Martins Rodrigues</p>
-    </footer>
 
-    </div>
+
+
 
 </body>
 
