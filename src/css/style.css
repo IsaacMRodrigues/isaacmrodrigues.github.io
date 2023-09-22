@@ -43,8 +43,27 @@ div{
   height: 100vh;
 }
 
+.teste{
+  display: flex;
+}
+
 .color-white{
   color: white;
+}
+.float-to-right{
+  float: right;
+}
+
+.list-group{
+  margin-top: 150px;
+  margin-left: 15px;
+}
+
+.carousel-control-prev .carousel-control-prev-icon{
+    background-image: url(/src/images/left-arrow.png);
+}
+.carousel-control-next .carousel-control-next-icon {
+    background-image: url(/src/images/right-arrow.png);
 }
 
 .limit-metad{
@@ -62,4 +81,11 @@ div{
 
 .margin-topo{
   margin-top: 150px;
+}
+
+.margin-left{
+  margin-left: 50px;
+}
+.margin-left2{
+  margin-left: 100px;
 }
