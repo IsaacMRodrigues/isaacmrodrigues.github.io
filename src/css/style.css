@@ -20,11 +20,15 @@
 
 section {
   height: 100vh;
+  width: 100%;
 }
 
 @media (max-width: 768px) {
   section {
     height: auto;
+    width: 100%;
+    margin: 0;
+    padding: 0;
     /* Redefina a altura para 'auto' para que as seções se ajustem ao conteúdo */
     /* Outros estilos específicos para telas menores, se necessário */
   }
@@ -40,6 +44,7 @@ section {
 .center {
   text-align: center;
 }
+
 
 div {
   text-align: justify;
@@ -102,9 +107,6 @@ section h1{
   filter: blur();
 }
 
-.limit-metad {
-  max-width: 50%;
-}
 
 .icon-contat {
   width: 20px;
@@ -126,6 +128,14 @@ section h1{
 
 .margin-topo3 {
   margin-top: 100px;
+}
+
+.margin-left3{
+  margin-left: 200px;
+}
+
+.margin-topo4{
+  margin-top: 65px;
 }
 
 
