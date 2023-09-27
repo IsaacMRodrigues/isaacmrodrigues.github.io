@@ -99,7 +99,7 @@ section h1{
 } */
 
 .borrada {
-  filter: blur(5px);
+  filter: blur();
 }
 
 .limit-metad {
