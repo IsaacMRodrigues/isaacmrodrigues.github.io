@@ -163,8 +163,8 @@
         }
 
         function compararNumeros() {
-            let numero1 = document.getElementById('comparar').value;
-            let numero2 = document.getElementById('comparar2').value;
+            let numero1 = parseFloat(document.getElementById('comparar').value);
+            let numero2 = parseFloat(document.getElementById('comparar2').value);
 
             if (numero1 == numero2) {
                 document.getElementById('resultComparar').innerText = "Os numeros são iguais";
