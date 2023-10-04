@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <title>Soma</title>
+</head>
+
+<body>
+    <div class="row">
+        <div class="col-4">
+            <div class="list-group" id="list-tab" role="tablist">
+                <a class="list-group-item list-group-item-action active" id="list-home-list" data-bs-toggle="list"
+                    href="#list-home" role="tab" aria-controls="t1">Verificador de Idade</a>
+                <a class="list-group-item list-group-item-action" id="list-profile-list" data-bs-toggle="list"
+                    href="#list-profile" role="tab" aria-controls="t2">Comparador de Numeros</a>
+                <a class="list-group-item list-group-item-action" id="list-messages-list" data-bs-toggle="list"
+                    href="#list-messages" role="tab" aria-controls="t3">Verificador de Divisão</a>
+                <a class="list-group-item list-group-item-action" id="list-settings-list" data-bs-toggle="list"
+                    href="#list-settings" role="tab" aria-controls="t4">Verificador de Temperatura</a>
+                <a class="list-group-item list-group-item-action" id="list-settings-list" data-bs-toggle="list"
+                    href="#t5" role="tab" aria-controls="t5">Fatorial</a>
+                <a class="list-group-item list-group-item-action" id="list-settings-list" data-bs-toggle="list"
+                    href="#t6" role="tab" aria-controls="t6">Contagem Regressiva</a>
+                <a class="list-group-item list-group-item-action" id="list-settings-list" data-bs-toggle="list"
+                    href="#t7" role="tab" aria-controls="t7">Tabuada</a>
+                <a class="list-group-item list-group-item-action" id="list-settings-list" data-bs-toggle="list"
+                    href="#t8" role="tab" aria-controls="t8">Verificador de Notas</a>
+            </div>
+        </div>
+        <div class="col-8">
+            <div class="tab-content" id="nav-tabContent">
+                <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="t1">
+                    <div style="margin-top: 50px; margin-left: 75px; max-width: 400px; ">
+                        <h3>Verificar idade</h3>
+                        <input type="number" class="form-control" placeholder="Digite sua idade" id="idade">
+                        <button onclick="salvarIdade()" style="margin-top: 20px;">Salvar</button>
+                        <p id="resultIdade"></p>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="t2">
+                    <div style="margin-top: 50px; margin-left: 75px; max-width: 400px; ">
+                        <h3>Comparar numeros</h3>
+                        <input type="number" class="form-control" placeholder="Digite o primero numero" id="comparar">
+                        <input type="number" class="form-control" placeholder="Digite o segundo numero" id="comparar2">
+                        <button onclick="compararNumeros()" style="margin-top: 20px;">Salvar</button>
+                        <p id="resultComparar"></p>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="list-messages" role="tabpanel" aria-labelledby="t3">
+                    <div style="margin-top: 50px; margin-left: 75px; max-width: 400px; ">
+                        <h3>Verificar se é divisivel</h3>
+                        <input type="number" class="form-control" placeholder="Digite o primero numero" id="divisivel">
+                        <input type="number" class="form-control" placeholder="Digite o segundo numero" id="divisivel2">
+                        <button onclick="verificarDivisivel()" style="margin-top: 20px;">Salvar</button>
+                        <p id="resultDivisivel"></p>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="list-settings" role="tabpanel" aria-labelledby="t4">
+                    <div style="margin-top: 50px; margin-left: 75px; max-width: 400px; ">
+                        <h3>Verificar Temperatura</h3>
+                        <input type="number" class="form-control" placeholder="Digite a temperatura" id="temperatura">
+                        <button onclick="verificaTemperatura()" style="margin-top: 20px;">Salvar</button>
+                        <p id="resultTemperatura"></p>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="t5" role="tabpanel" aria-labelledby="t5">
+                    <div style="margin-top: 50px; margin-left: 75px; max-width: 400px; ">
+                        <h3>Fatorial</h3>
+                        <input type="number" class="form-control" placeholder="Digite um numero para fatorar"
+                            id="fatorial">
+                        <button onclick="fatorial()" style="margin-top: 20px;">Salvar</button>
+                        <p id="resultFatorial"></p>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="t6" role="tabpanel" aria-labelledby="t6">
+                    <div style="margin-top: 50px; margin-left: 75px; max-width: 400px; ">
+                        <h3>Contagem Regressiva</h3>
+                        <input type="number" class="form-control" placeholder="Digite o numero para contagem regressiva"
+                            id="regressiva">
+                        <button onclick="contagemRegressiva()" style="margin-top: 20px;">Salvar</button>
+                        <p id="resultRegressiva"></p>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="t7" role="tabpanel" aria-labelledby="t7">
+                    <div style="margin-top: 50px; margin-left: 75px; max-width: 400px; ">
+                        <h3>Tabuada</h3>
+                        <input type="number" class="form-control" placeholder="Digite o numero para fazer a tabuada"
+                            id="tabuada">
+                        <button onclick="tabuada()" style="margin-top: 20px;">Salvar</button>
+                        <p id="resultTabuada"></p>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="list-settings" role="tabpanel" aria-labelledby="t8">...</div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+
+    <script>
+
+        function tabuada() {
+            let numero = document.getElementById('tabuada').value;
+
+            for (let i = 1; i < 11; i++) {
+                document.getElementById('resultTabuada').innerHTML += numero + " * " + i + " = " +  numero * i + '<br>';
+            }
+        }
+
+        function contagemRegressiva() {
+            let numero = document.getElementById('regressiva').value;
+            let final = 0;
+
+            document.getElementById('resultRegressiva').innerText = " ";
+
+            while (final != 1) {
+                final = numero--
+                document.getElementById('resultRegressiva').innerHTML += final + "<br>";
+            }
+        }
+
+
+        function fatorial() {
+            let numero = document.getElementById('fatorial').value;
+            let resultado = numero;
+
+            for (let i = 1; i < numero; i++) {
+                resultado = resultado * i;
+            }
+
+            document.getElementById('resultFatorial').innerText = resultado;
+        }
+
+
+
+        function salvarIdade() {
+            let idade = document.getElementById('idade').value;
+
+            if (idade < 18) {
+                document.getElementById('resultIdade').innerText = "Você é menor de idade";
+            } else if (idade >= 18 && idade < 65) {
+                document.getElementById('resultIdade').innerText = "Você é adulto";
+            } else {
+                document.getElementById('resultIdade').innerText = "Você é idoso";
+            }
+        }
+
+        function compararNumeros() {
+            let numero1 = document.getElementById('comparar').value;
+            let numero2 = document.getElementById('comparar2').value;
+
+            if (numero1 == numero2) {
+                document.getElementById('resultComparar').innerText = "Os numeros são iguais";
+            } else if (numero1 > numero2) {
+                document.getElementById('resultComparar').innerText = "O primeiro é maior que o segundo";
+            } else {
+                document.getElementById('resultComparar').innerText = "O segundo é maior que o primeiro";
+            }
+        }
+
+        function verificarDivisivel() {
+            let numero1 = document.getElementById('divisivel').value;
+            let numero2 = document.getElementById('divisivel2').value;
+            let resultado = numero1 % numero2;
+
+            if (resultado === 0) {
+                document.getElementById('resultDivisivel').innerText = "O primeiro numero é divisivel pelo segundo";
+            } else {
+                document.getElementById('resultDivisivel').innerText = "O primeiro numero não é divisivel pelo segundo";
+            }
+        }
+
+        function verificaTemperatura() {
+            let temperatura = document.getElementById('temperatura').value;
+
+            if (temperatura < 18) {
+                document.getElementById('resultTemperatura').innerText = "Está frio";
+            } else if (temperatura >= 18 && temperatura < 30) {
+                document.getElementById('resultTemperatura').innerText = "O clima está agradavel";
+            } else {
+                document.getElementById('resultTemperatura').innerText = "Está quente";
+            }
+        }
+
+    </script>
+</body>
+
+</html>
