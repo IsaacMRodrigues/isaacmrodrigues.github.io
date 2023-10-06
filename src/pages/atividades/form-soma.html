@@ -111,6 +111,7 @@
                                     <th scope="col">Terceiro Bimestre</th>
                                     <th scope="col">Quarto Bimestre</th>
                                     <th scope="col">Média Final</th>
+                                    <th scope="col">Nota Final</th>
                                     <th scope="col">Situação</th>
                                 </tr>
                             </thead>
@@ -122,7 +123,9 @@
                                     <td><input type="number" class="form-control" placeholder="" id="bim13"></td>
                                     <td><input type="number" class="form-control" placeholder="" id="bim14"></td>
                                     <td id="media1"></td>
+                                    <td id="final1"></td>
                                     <td id="situacao1"></td>
+
                                 </tr>
                                 <tr>
                                     <td scope="row">Matematica</td>
@@ -131,7 +134,9 @@
                                     <td><input type="number" class="form-control" placeholder="" id="bim23"></td>
                                     <td><input type="number" class="form-control" placeholder="" id="bim24"></td>
                                     <td id="media2"></td>
+                                    <td id="final2"></td>
                                     <td id="situacao2"></td>
+
                                 </tr>
                                 <tr>
                                     <td scope="row">Historia</td>
@@ -140,6 +145,7 @@
                                     <td><input type="number" class="form-control" placeholder="" id="bim33"></td>
                                     <td><input type="number" class="form-control" placeholder="" id="bim34"></td>
                                     <td id="media3"></td>
+                                    <td id="final3"></td>
                                     <td id="situacao3"></td>
                                 </tr>
                             </tbody>
@@ -147,6 +153,7 @@
 
                         </table>
                         <button onclick="notas()" style="margin-top: 20px;" class="btn btn-primary">Salvar</button>
+                        <p id="vaziio"></p>
                     </div>
                 </div>
             </div>
@@ -179,9 +186,19 @@
                 parseFloat(document.getElementById('bim34').value),
             ];
 
-
+            function isValidValue(value) {
+                return !isNaN(value) && isFinite(value);
+            }
 
             function calculaMedia(notas) {
+
+                let notasValidas = notas.filter(isValidValue);
+
+                if (notasValidas.length < 4) {
+                    document.getElementById('vaziio').innerText = "Preencha todas as notas";
+                    return "";
+                }
+
                 let media = 0;
                 for (let i = 0; i < notas.length; i++) {
                     media += notas[i];
@@ -189,35 +206,52 @@
 
                 media = media / notas.length;
 
+                document.getElementById('vaziio').innerText = "";
                 return media;
             }
 
             function soma(notas) {
+
+                let notasValidas = notas.filter(isValidValue);
+
+                if (notasValidas.length < 4) {
+                    document.getElementById('vaziio').innerText = "Preencha todas as notas";
+                    return "";
+                }
+
                 let somas = 0;
                 for (let i = 0; i < notas.length; i++) {
                     somas += notas[i];
                 }
                 return somas;
+                
             }
 
+            function verificaSituacao(texto, notas) {
+                if(soma(notas) === ""){
+                    document.getElementById(texto).innerHTML = "";
+                } else {
+                    if (soma(notas) >= 60) {
+                    document.getElementById(texto).innerHTML = '<p style="color: green;">' + "Aprovado";
+                } else {
+                    document.getElementById(texto).innerHTML = '<p style="color: red;">' + "Reprovado";
+                }
+                }
+            }
+
+
             document.getElementById('media1').innerText = calculaMedia(notas);
-            if (soma(notas) >= 60) {
-                document.getElementById('situacao1').innerHTML = '<p style="color: green;">' + "Aprovado";
-            } else {
-                document.getElementById('situacao1').innerHTML = '<p style="color: red;">' + "Reprovado";
-            }
+            document.getElementById('final1').innerText = soma(notas);
+            verificaSituacao('situacao1', notas)
+
             document.getElementById('media2').innerText = calculaMedia(notas2);
-            if (soma(notas2) >= 60) {
-                document.getElementById('situacao2').innerHTML = '<p style="color: green;">' + "Aprovado";
-            } else {
-                document.getElementById('situacao2').innerHTML = '<p style="color: red;">' + "Reprovado";
-            }
+            document.getElementById('final2').innerText = soma(notas2);
+            verificaSituacao('situacao2', notas2);
+
             document.getElementById('media3').innerText = calculaMedia(notas3);
-            if (soma(notas3) >= 60) {
-                document.getElementById('situacao3').innerHTML = '<p style="color: green;">' + "Aprovado";
-            } else {
-                document.getElementById('situacao3').innerHTML = '<p style="color: red;">' + "Reprovado";
-            }
+            document.getElementById('final3').innerText = soma(notas3);
+            verificaSituacao('situacao3', notas3);
+
 
         }
 
