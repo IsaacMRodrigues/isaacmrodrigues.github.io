@@ -12,7 +12,8 @@
 <body>
     <div class="row">
         <div class="col-4">
-            <div class="list-group" id="list-tab" role="tablist">
+            <div class="list-group" id="list-tab" role="tablist" style="margin-top: 150px;
+            margin-left: 15px;">
                 <a class="list-group-item list-group-item-action active" id="list-home-list" data-bs-toggle="list"
                     href="#list-home" role="tab" aria-controls="t1">Verificador de Idade</a>
                 <a class="list-group-item list-group-item-action" id="list-profile-list" data-bs-toggle="list"
@@ -29,10 +30,13 @@
                     href="#t7" role="tab" aria-controls="t7">Tabuada</a>
                 <a class="list-group-item list-group-item-action" id="list-settings-list" data-bs-toggle="list"
                     href="#t8" role="tab" aria-controls="t8">Verificador de Notas</a>
+                <a class="list-group-item" id="list-messages-list" 
+                    href="/src/pages/articles.html">Voltar</a>
             </div>
         </div>
         <div class="col-8">
-            <div class="tab-content" id="nav-tabContent">
+            <div class="tab-content" id="nav-tabContent" style="margin-top: 150px;
+            margin-left: 15px;">
                 <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="t1">
                     <div style="margin-top: 50px; margin-left: 75px; max-width: 400px; ">
                         <h3>Verificar idade</h3>
@@ -149,7 +153,6 @@
                                     <td id="situacao3"></td>
                                 </tr>
                             </tbody>
-
 
                         </table>
                         <button onclick="notas()" style="margin-top: 20px;" class="btn btn-primary">Salvar</button>
