@@ -50,7 +50,7 @@
                     <div style="margin-top: 50px; margin-left: 75px; max-width: 400px; ">
                         <h3>Comparar numeros</h3>
                         <input type="number" class="form-control" placeholder="Digite o primero numero" id="comparar">
-                        <input type="number" class="form-control" placeholder="Digite o segundo numero" id="comparar2">
+                        <input type="number" class="form-control" placeholder="Digite o segundo numero" id="comparar2" style="margin-top: 10px;">
                         <button onclick="compararNumeros()" style="margin-top: 20px;"
                             class="btn btn-primary">Salvar</button>
                         <p id="resultComparar"></p>
@@ -60,7 +60,7 @@
                     <div style="margin-top: 50px; margin-left: 75px; max-width: 400px; ">
                         <h3>Verificar se é divisivel</h3>
                         <input type="number" class="form-control" placeholder="Digite o primero numero" id="divisivel">
-                        <input type="number" class="form-control" placeholder="Digite o segundo numero" id="divisivel2">
+                        <input type="number" class="form-control" placeholder="Digite o segundo numero" id="divisivel2" style="margin-top: 10px;">
                         <button onclick="verificarDivisivel()" style="margin-top: 20px;"
                             class="btn btn-primary">Salvar</button>
                         <p id="resultDivisivel"></p>
@@ -198,7 +198,7 @@
                 let notasValidas = notas.filter(isValidValue);
 
                 if (notasValidas.length < 4) {
-                    document.getElementById('vaziio').innerText = "Preencha todas as notas";
+                    document.getElementById('vaziio').innerHTML = '<p style="color: red;">' + "Preencha todas as notas";
                     return "";
                 }
 
@@ -218,7 +218,7 @@
                 let notasValidas = notas.filter(isValidValue);
 
                 if (notasValidas.length < 4) {
-                    document.getElementById('vaziio').innerText = "Preencha todas as notas";
+                    document.getElementById('vaziio').innerHTML = '<p style="color: red;">' + "Preencha todas as notas";
                     return "";
                 }
 
