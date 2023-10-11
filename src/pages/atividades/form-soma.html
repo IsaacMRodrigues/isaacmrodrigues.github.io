@@ -22,16 +22,15 @@
                     href="#list-messages" role="tab" aria-controls="t3">Verificador de Divisão</a>
                 <a class="list-group-item list-group-item-action" id="list-settings-list" data-bs-toggle="list"
                     href="#list-settings" role="tab" aria-controls="t4">Verificador de Temperatura</a>
-                <a class="list-group-item list-group-item-action" id="list-settings-list" data-bs-toggle="list"
-                    href="#t5" role="tab" aria-controls="t5">Fatorial</a>
-                <a class="list-group-item list-group-item-action" id="list-settings-list" data-bs-toggle="list"
-                    href="#t6" role="tab" aria-controls="t6">Contagem Regressiva</a>
-                <a class="list-group-item list-group-item-action" id="list-settings-list" data-bs-toggle="list"
-                    href="#t7" role="tab" aria-controls="t7">Tabuada</a>
-                <a class="list-group-item list-group-item-action" id="list-settings-list" data-bs-toggle="list"
-                    href="#t8" role="tab" aria-controls="t8">Verificador de Notas</a>
-                <a class="list-group-item" id="list-messages-list" 
-                    href="/src/pages/articles.html">Voltar</a>
+                <a class="list-group-item list-group-item-action" id="list-t5-list" data-bs-toggle="list" href="#t5"
+                    role="tab" aria-controls="t5">Fatorial</a>
+                <a class="list-group-item list-group-item-action" id="list-t6-list" data-bs-toggle="list" href="#t6"
+                    role="tab" aria-controls="t6">Contagem Regressiva</a>
+                <a class="list-group-item list-group-item-action" id="list-t7-list" data-bs-toggle="list" href="#t7"
+                    role="tab" aria-controls="t7">Tabuada</a>
+                <a class="list-group-item list-group-item-action" id="list-t8-list" data-bs-toggle="list" href="#t8"
+                    role="tab" aria-controls="t8">Verificador de Notas</a>
+                <a class="list-group-item" id="list-messages-list" href="/src/pages/articles.html">Voltar</a>
             </div>
         </div>
         <div class="col-8">
@@ -50,7 +49,8 @@
                     <div style="margin-top: 50px; margin-left: 75px; max-width: 400px; ">
                         <h3>Comparar numeros</h3>
                         <input type="number" class="form-control" placeholder="Digite o primero numero" id="comparar">
-                        <input type="number" class="form-control" placeholder="Digite o segundo numero" id="comparar2" style="margin-top: 10px;">
+                        <input type="number" class="form-control" placeholder="Digite o segundo numero" id="comparar2"
+                            style="margin-top: 10px;">
                         <button onclick="compararNumeros()" style="margin-top: 20px;"
                             class="btn btn-primary">Salvar</button>
                         <p id="resultComparar"></p>
@@ -60,7 +60,8 @@
                     <div style="margin-top: 50px; margin-left: 75px; max-width: 400px; ">
                         <h3>Verificar se é divisivel</h3>
                         <input type="number" class="form-control" placeholder="Digite o primero numero" id="divisivel">
-                        <input type="number" class="form-control" placeholder="Digite o segundo numero" id="divisivel2" style="margin-top: 10px;">
+                        <input type="number" class="form-control" placeholder="Digite o segundo numero" id="divisivel2"
+                            style="margin-top: 10px;">
                         <button onclick="verificarDivisivel()" style="margin-top: 20px;"
                             class="btn btn-primary">Salvar</button>
                         <p id="resultDivisivel"></p>
@@ -106,7 +107,28 @@
                 <div class="tab-pane fade" id="t8" role="tabpanel" aria-labelledby="t8">
                     <div style="margin-top: 50px; margin-left: 75px; max-width: 500px; ">
                         <h3>Verificador de Notas</h3>
-                        <table class="table table-striped">
+                        <div class="input-group mb-3">
+
+                            <input list="nomeMaterias" id="materia" name="materia">
+                            <datalist id="nomeMaterias"></datalist>
+                        </div>
+                        <div class="input-group flex-nowrap">
+                            <span class="input-group-text" id="addon-wrapping">1º Bim</span>
+                            <input type="number" class="form-control" placeholder="Nota 1" aria-label="Nota 1"
+                                aria-describedby="addon-wrapping" id="bim1">
+                            <span class="input-group-text" id="addon-wrapping">2º Bim</span>
+                            <input type="number" class="form-control" placeholder="Nota 2" aria-label="Nota 2"
+                                aria-describedby="addon-wrapping" id="bim2">
+                        </div>
+                        <div class="input-group flex-nowrap">
+                            <span class="input-group-text" id="addon-wrapping">3º Bim</span>
+                            <input type="number" class="form-control" placeholder="Nota 1" aria-label="Nota 3"
+                                aria-describedby="addon-wrapping" id="bim3">
+                            <span class="input-group-text" id="addon-wrapping">4º Bim</span>
+                            <input type="number" class="form-control" placeholder="Nota 2" aria-label="Nota 4"
+                                aria-describedby="addon-wrapping" id="bim4">
+                        </div>
+                        <!-- <table class="table table-striped">
                             <thead>
                                 <tr>
                                     <th scope="col"></th>
@@ -154,9 +176,9 @@
                                 </tr>
                             </tbody>
 
-                        </table>
+                        </table> -->
                         <button onclick="notas()" style="margin-top: 20px;" class="btn btn-primary">Salvar</button>
-                        <p id="vaziio"></p>
+                        <p id="resultNotas"></p>
                     </div>
                 </div>
             </div>
@@ -169,25 +191,110 @@
 
     <script>
 
+        let nomeMaterias = ["Portugues", "Matématica", "Inglês", "Historia", "asa"];
+
+        let dataList = document.getElementById("nomeMaterias");
+
+        nomeMaterias.forEach(function (materia) {
+            let option = document.createElement("option");
+            option.value = materia;
+            dataList.appendChild(option);
+        });
+
+        let materia = { id: 0, nome: "", notas: [], total: 0, printInfo: "" };
+        let materias = [];
+
         function notas() {
-            let notas = [
-                parseFloat(document.getElementById('bim11').value),
-                parseFloat(document.getElementById('bim12').value),
-                parseFloat(document.getElementById('bim13').value),
-                parseFloat(document.getElementById('bim14').value),
-            ];
-            let notas2 = [
-                parseFloat(document.getElementById('bim21').value),
-                parseFloat(document.getElementById('bim22').value),
-                parseFloat(document.getElementById('bim23').value),
-                parseFloat(document.getElementById('bim24').value),
-            ];
-            let notas3 = [
-                parseFloat(document.getElementById('bim31').value),
-                parseFloat(document.getElementById('bim32').value),
-                parseFloat(document.getElementById('bim33').value),
-                parseFloat(document.getElementById('bim34').value),
-            ];
+
+            let inputNotas = [];
+            let totalNotas = 0;
+            let resultados = `<b>BOLETIM</b><table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th scope="col"></th>
+                                    <th scope="col">Primeiro Bimestre</th>
+                                    <th scope="col">Segundo Bimestre</th>
+                                    <th scope="col">Terceiro Bimestre</th>
+                                    <th scope="col">Quarto Bimestre</th>
+                                    <th scope="col">Nota Final</th>
+                                    <th scope="col">Situação</th>
+                                </tr>   
+                            </thead> <br>`;
+
+
+            inputNotas.push(parseFloat(document.getElementById('bim1').value))
+            inputNotas.push(parseFloat(document.getElementById('bim2').value))
+            inputNotas.push(parseFloat(document.getElementById('bim3').value))
+            inputNotas.push(parseFloat(document.getElementById('bim4').value))
+
+            inputNotas.forEach(e => {
+                totalNotas += e;
+            })
+
+
+            let teste = document.getElementById('materia').value;
+
+            materias.push(
+                {
+
+                    id: materia.id++,
+                    nome: teste,
+                    notas: inputNotas,
+                    total: totalNotas,
+                    info: `
+                            <tbody>
+                                <tr>
+                                    <td scope="row">${teste}</td>
+                                    <td>${inputNotas[0]}</td>
+                                    <td>${inputNotas[1]}</td>
+                                    <td>${inputNotas[2]}</td>
+                                    <td>${inputNotas[3]}</td>
+                                    <td>${totalNotas}</td>
+                                    <td>${isAprovadoOuReprovado(totalNotas)}</td>
+                                    </tr>
+                            </tbody>
+                            `
+                }
+            )
+
+            function isAprovadoOuReprovado(valor) {
+                if (valor >= 60) {
+                    return "APROVADO"
+                } else {
+                    return "REPROVADO"
+                }
+            }
+
+            console.log(materias)
+
+            materias.forEach(e => {
+                resultados += e.info;
+            })
+
+            resultNotas.innerHTML = resultados;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
             function isValidValue(value) {
                 return !isNaN(value) && isFinite(value);
@@ -227,18 +334,18 @@
                     somas += notas[i];
                 }
                 return somas;
-                
+
             }
 
             function verificaSituacao(texto, notas) {
-                if(soma(notas) === ""){
+                if (soma(notas) === "") {
                     document.getElementById(texto).innerHTML = "";
                 } else {
                     if (soma(notas) >= 60) {
-                    document.getElementById(texto).innerHTML = '<p style="color: green;">' + "Aprovado";
-                } else {
-                    document.getElementById(texto).innerHTML = '<p style="color: red;">' + "Reprovado";
-                }
+                        document.getElementById(texto).innerHTML = '<p style="color: green;">' + "Aprovado";
+                    } else {
+                        document.getElementById(texto).innerHTML = '<p style="color: red;">' + "Reprovado";
+                    }
                 }
             }
 
