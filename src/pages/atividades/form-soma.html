@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="/src/css/style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
@@ -10,6 +11,39 @@
 </head>
 
 <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#inicio">
+                <img src="/src/images/svg20.png" class="logo-img" alt="Logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar"
+                aria-labelledby="offcanvasDarkNavbarLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Menu</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
+                        aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="/index.html#inicio">SOBRE</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="/index.html#projetos">PROJETOS</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="/index.html#artigos">ARTIGOS</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
     <div class="row">
         <div class="col-4">
             <div class="list-group" id="list-tab" role="tablist" style="margin-top: 150px;
@@ -105,13 +139,22 @@
                     </div>
                 </div>
                 <div class="tab-pane fade" id="t8" role="tabpanel" aria-labelledby="t8">
+                    <div style="margin-top: 50px; margin-left: 75px; max-width: 500px;">
+                        <input type="text" class="form-control" placeholder="Digite o nome do aluno" id="nomeAluno">
+                        <input type="checkbox" id="nomeInstituicao">
+                        <label for="nomeInstituicao">Senai</label>
+                        <br>
+                        <input type="checkbox" id="nomeCurso">
+                        <label for="nomeCurso">Tecnico em Informatica para Internet</label>
+                    </div>
                     <div style="margin-top: 50px; margin-left: 75px; max-width: 500px; ">
                         <h3>Verificador de Notas</h3>
                         <div class="input-group mb-3">
 
-                            <input list="nomeMaterias" id="materia" name="materia">
-                            <datalist id="nomeMaterias"></datalist>
+                            <select id="nomeMaterias" class="form-select">
+                            </select>
                         </div>
+                        <p id="alerta" style="color: red;"></p>
                         <div class="input-group flex-nowrap">
                             <span class="input-group-text" id="addon-wrapping">1º Bim</span>
                             <input type="number" class="form-control" placeholder="Nota 1" aria-label="Nota 1"
@@ -128,55 +171,6 @@
                             <input type="number" class="form-control" placeholder="Nota 2" aria-label="Nota 4"
                                 aria-describedby="addon-wrapping" id="bim4">
                         </div>
-                        <!-- <table class="table table-striped">
-                            <thead>
-                                <tr>
-                                    <th scope="col"></th>
-                                    <th scope="col">Primeiro Bimestre</th>
-                                    <th scope="col">Segundo Bimestre</th>
-                                    <th scope="col">Terceiro Bimestre</th>
-                                    <th scope="col">Quarto Bimestre</th>
-                                    <th scope="col">Média Final</th>
-                                    <th scope="col">Nota Final</th>
-                                    <th scope="col">Situação</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td scope="row">Portugues</td>
-                                    <td><input type="number" class="form-control" placeholder="" id="bim11"></td>
-                                    <td><input type="number" class="form-control" placeholder="" id="bim12"></td>
-                                    <td><input type="number" class="form-control" placeholder="" id="bim13"></td>
-                                    <td><input type="number" class="form-control" placeholder="" id="bim14"></td>
-                                    <td id="media1"></td>
-                                    <td id="final1"></td>
-                                    <td id="situacao1"></td>
-
-                                </tr>
-                                <tr>
-                                    <td scope="row">Matematica</td>
-                                    <td><input type="number" class="form-control" placeholder="" id="bim21"></td>
-                                    <td><input type="number" class="form-control" placeholder="" id="bim22"></td>
-                                    <td><input type="number" class="form-control" placeholder="" id="bim23"></td>
-                                    <td><input type="number" class="form-control" placeholder="" id="bim24"></td>
-                                    <td id="media2"></td>
-                                    <td id="final2"></td>
-                                    <td id="situacao2"></td>
-
-                                </tr>
-                                <tr>
-                                    <td scope="row">Historia</td>
-                                    <td><input type="number" class="form-control" placeholder="" id="bim31"></td>
-                                    <td><input type="number" class="form-control" placeholder="" id="bim32"></td>
-                                    <td><input type="number" class="form-control" placeholder="" id="bim33"></td>
-                                    <td><input type="number" class="form-control" placeholder="" id="bim34"></td>
-                                    <td id="media3"></td>
-                                    <td id="final3"></td>
-                                    <td id="situacao3"></td>
-                                </tr>
-                            </tbody>
-
-                        </table> -->
                         <button onclick="notas()" style="margin-top: 20px;" class="btn btn-primary">Salvar</button>
                         <p id="resultNotas"></p>
                     </div>
@@ -193,12 +187,13 @@
 
         let nomeMaterias = ["Portugues", "Matématica", "Inglês", "Historia", "asa"];
 
-        let dataList = document.getElementById("nomeMaterias");
+        let select = document.getElementById("nomeMaterias");
 
         nomeMaterias.forEach(function (materia) {
             let option = document.createElement("option");
             option.value = materia;
-            dataList.appendChild(option);
+            option.text = materia;
+            select.appendChild(option);
         });
 
         let materia = { id: 0, nome: "", notas: [], total: 0, printInfo: "" };
@@ -219,64 +214,7 @@
                                     <th scope="col">Nota Final</th>
                                     <th scope="col">Situação</th>
                                 </tr>   
-                            </thead> <br>`;
-
-
-            inputNotas.push(parseFloat(document.getElementById('bim1').value))
-            inputNotas.push(parseFloat(document.getElementById('bim2').value))
-            inputNotas.push(parseFloat(document.getElementById('bim3').value))
-            inputNotas.push(parseFloat(document.getElementById('bim4').value))
-
-
-            inputNotas.forEach(e => {
-                if(e === " " || e < 0 || e > 25){
-                    resultNotas.innerHTML = "teste"
-                } else {
-                totalNotas += e;
-                }
-            })
-
-
-            let teste = document.getElementById('materia').value;
-
-            materias.push(
-                {
-
-                    id: materia.id++,
-                    nome: teste,
-                    notas: inputNotas,
-                    total: totalNotas,
-                    info: `
-                            <tbody>
-                                <tr>
-                                    <td scope="row">${teste}</td>
-                                    <td>${inputNotas[0]}</td>
-                                    <td>${inputNotas[1]}</td>
-                                    <td>${inputNotas[2]}</td>
-                                    <td>${inputNotas[3]}</td>
-                                    <td>${totalNotas}</td>
-                                    <td>${isAprovadoOuReprovado(totalNotas)}</td>
-                                    </tr>
-                            </tbody>
-                            `
-                }
-            )
-
-            function isAprovadoOuReprovado(valor) {
-                if (valor >= 60) {
-                    return "APROVADO"
-                } else {
-                    return "REPROVADO"
-                }
-            }
-
-            console.log(materias)
-
-            materias.forEach(e => {
-                resultados += e.info;
-            })
-
-            resultNotas.innerHTML = resultados;
+                            </thead> <br>  <tbody>`;
 
 
 
@@ -284,8 +222,81 @@
                 return !isNaN(value) && isFinite(value);
             }
 
-            
 
+            function validarCampo(valor) {
+                if (isValidValue(valor) && valor <= 25 && valor >= 0) {
+                    inputNotas.push(valor);
+                } else {
+                    mensagemValidaCampo();
+                }
+
+            }
+
+            function validaMateria(nomeMateria) {
+                mensagemValidaMateria();
+                return materias.some(materia => materia.nome === nomeMateria);
+            }
+
+            function mensagemValidaCampo() {
+                alerta.innerHTML = "A nota deve ser um numero positivo até 25";
+            }
+
+            function mensagemValidaMateria() {
+                alerta.innerHTML = "Essa matéria já foi adicionada!";
+            }
+
+            validarCampo(parseFloat(document.getElementById('bim1').value))
+            validarCampo(parseFloat(document.getElementById('bim2').value))
+            validarCampo(parseFloat(document.getElementById('bim3').value))
+            validarCampo(parseFloat(document.getElementById('bim4').value))
+
+            inputNotas.forEach(e => {
+                totalNotas += e;
+            })
+
+
+            if (inputNotas.length < 4 || validaMateria(document.getElementById('nomeMaterias').value)) {
+                mensagemValidaCampo();
+            } else {
+                alerta.innerHTML = " "
+                let materiaNome = document.getElementById('nomeMaterias').value;
+
+                materias.push(
+                    {
+
+                        id: materia.id++,
+                        nome: materiaNome,
+                        notas: inputNotas,
+                        total: totalNotas,
+                        info: `
+                           
+                                <tr>
+                                    <td scope="row">${materiaNome}</td>
+                                    <td>${inputNotas[0]}</td>
+                                    <td>${inputNotas[1]}</td>
+                                    <td>${inputNotas[2]}</td>
+                                    <td>${inputNotas[3]}</td>
+                                    <td>${totalNotas}</td>
+                                    <td>${isAprovadoOuReprovado(totalNotas)}</td>
+                                    </tr>
+                            `
+                    }
+                )
+
+                function isAprovadoOuReprovado(valor) {
+                    if (valor >= 60) {
+                        return "APROVADO"
+                    } else {
+                        return "REPROVADO"
+                    }
+                }
+
+                materias.forEach(e => {
+                    resultados += e.info;
+                })
+
+                resultNotas.innerHTML = resultados;
+            }
 
 
         }
