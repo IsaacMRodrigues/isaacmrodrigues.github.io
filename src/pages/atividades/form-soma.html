@@ -45,7 +45,7 @@
         </div>
     </nav>
     <div class="row">
-        <div class="col-4">
+        <div class="col-2">
             <div class="list-group" id="list-tab" role="tablist" style="margin-top: 150px;
             margin-left: 15px;">
                 <a class="list-group-item list-group-item-action active" id="list-home-list" data-bs-toggle="list"
@@ -139,13 +139,14 @@
                     </div>
                 </div>
                 <div class="tab-pane fade" id="t8" role="tabpanel" aria-labelledby="t8">
-                    <div style="margin-top: 50px; margin-left: 75px; max-width: 500px;">
+                    <div style="margin-top: 50px; margin-left: 75px; max-width: 500px;" id="divAluno">
                         <input type="text" class="form-control" placeholder="Digite o nome do aluno" id="nomeAluno">
                         <input type="checkbox" id="nomeInstituicao">
                         <label for="nomeInstituicao">Senai</label>
                         <br>
                         <input type="checkbox" id="nomeCurso">
                         <label for="nomeCurso">Tecnico em Informatica para Internet</label>
+                        <button onclick="aluno()" style="margin-top: 20px;" class="btn btn-primary">Salvar</button>
                     </div>
                     <div style="margin-top: 50px; margin-left: 75px; max-width: 500px; ">
                         <h3>Verificador de Notas</h3>
@@ -165,10 +166,10 @@
                         </div>
                         <div class="input-group flex-nowrap">
                             <span class="input-group-text" id="addon-wrapping">3º Bim</span>
-                            <input type="number" class="form-control" placeholder="Nota 1" aria-label="Nota 3"
+                            <input type="number" class="form-control" placeholder="Nota 3" aria-label="Nota 3"
                                 aria-describedby="addon-wrapping" id="bim3">
                             <span class="input-group-text" id="addon-wrapping">4º Bim</span>
-                            <input type="number" class="form-control" placeholder="Nota 2" aria-label="Nota 4"
+                            <input type="number" class="form-control" placeholder="Nota 4" aria-label="Nota 4"
                                 aria-describedby="addon-wrapping" id="bim4">
                         </div>
                         <button onclick="notas()" style="margin-top: 20px;" class="btn btn-primary">Salvar</button>
@@ -185,7 +186,10 @@
 
     <script>
 
-        let nomeMaterias = ["Portugues", "Matématica", "Inglês", "Historia", "asa"];
+
+
+
+        let nomeMaterias = ["Portugues", "Matématica", "Inglês", "Historia", "Geografia", "Artes"];
 
         let select = document.getElementById("nomeMaterias");
 
@@ -196,14 +200,32 @@
             select.appendChild(option);
         });
 
-        let materia = { id: 0, nome: "", notas: [], total: 0, printInfo: "" };
+        let materia = { id: 0, nome: "", notas: [], total: 0, printInfo: "", };
         let materias = [];
+        let user = { nome: "", instituicao: "", curso: "", materia: [] };
+
+        function aluno() {
+
+            const alunoDiv = document.getElementById('divAluno');
+
+            let checkboxInstituicao = document.getElementById('nomeInstituicao');
+
+            let checkboxCurso = document.getElementById('nomeCurso');
+
+            user.nome = nomeAluno.value;
+            user.instituicao = checkboxInstituicao.checked ? checkboxInstituicao.nextElementSibling.textContent : '';;
+            user.curso = checkboxCurso.checked ? checkboxCurso.nextElementSibling.textContent : '';;
+
+            alunoDiv.style.display = 'none';
+        }
 
         function notas() {
 
             let inputNotas = [];
             let totalNotas = 0;
-            let resultados = `<b>BOLETIM</b><table class="table table-striped">
+
+            let resultados = `<b>BOLETIM DE: ${user.nome.toLocaleUpperCase()}</b><br><b>INSTITUIÇÃO/ESCOLA: ${user.instituicao.toLocaleUpperCase()} </b><br><b>CURSO: ${user.curso.toLocaleUpperCase()} </b>
+            <table class="table table-striped">
                             <thead>
                                 <tr>
                                     <th scope="col"></th>
@@ -223,11 +245,11 @@
             }
 
 
-            function validarCampo(valor) {
-                if (isValidValue(valor) && valor <= 25 && valor >= 0) {
+            function validarCampo(valor, limite) {
+                if (isValidValue(valor) && valor <= limite && valor >= 0) {
                     inputNotas.push(valor);
                 } else {
-                    mensagemValidaCampo();
+                    mensagemValidaCampo(limite);
                 }
 
             }
@@ -237,18 +259,24 @@
                 return materias.some(materia => materia.nome === nomeMateria);
             }
 
-            function mensagemValidaCampo() {
-                alerta.innerHTML = "A nota deve ser um numero positivo até 25";
+            function mensagemValidaCampo(limite) {
+                if (limite === 20) {
+                    alerta.innerHTML = "A Primeira nota deve ser um numero positivo até 20";
+                } else if (limite === 25) {
+                    alerta.innerHTML = "A Segunda/Terceira nota deve ser um numero positivo até 25";
+                } else if (limite === 30) {
+                    alerta.innerHTML = "A quarta nota deve ser um numero positivo até 30";
+                }
             }
 
             function mensagemValidaMateria() {
                 alerta.innerHTML = "Essa matéria já foi adicionada!";
             }
 
-            validarCampo(parseFloat(document.getElementById('bim1').value))
-            validarCampo(parseFloat(document.getElementById('bim2').value))
-            validarCampo(parseFloat(document.getElementById('bim3').value))
-            validarCampo(parseFloat(document.getElementById('bim4').value))
+            validarCampo(parseFloat(document.getElementById('bim1').value), 20)
+            validarCampo(parseFloat(document.getElementById('bim2').value), 25)
+            validarCampo(parseFloat(document.getElementById('bim3').value), 25)
+            validarCampo(parseFloat(document.getElementById('bim4').value), 30)
 
             inputNotas.forEach(e => {
                 totalNotas += e;
@@ -256,7 +284,7 @@
 
 
             if (inputNotas.length < 4 || validaMateria(document.getElementById('nomeMaterias').value)) {
-                mensagemValidaCampo();
+
             } else {
                 alerta.innerHTML = " "
                 let materiaNome = document.getElementById('nomeMaterias').value;
@@ -269,8 +297,6 @@
                         notas: inputNotas,
                         total: totalNotas,
                         info: `
-                           
-                                <tr>
                                     <td scope="row">${materiaNome}</td>
                                     <td>${inputNotas[0]}</td>
                                     <td>${inputNotas[1]}</td>
@@ -280,8 +306,10 @@
                                     <td>${isAprovadoOuReprovado(totalNotas)}</td>
                                     </tr>
                             `
+
                     }
                 )
+
 
                 function isAprovadoOuReprovado(valor) {
                     if (valor >= 60) {
@@ -291,14 +319,21 @@
                     }
                 }
 
-                materias.forEach(e => {
-                    resultados += e.info;
-                })
+                materias.forEach((e) => {
+                    user.materia.push(e);
+                });
+
+                // o erro ta aq, user não é um array e sim um objeto
+                // você tem q fazer mostrar na tela só
+
+
+                    resultados += user.materia.forEach(e => {
+                        resultados += e.info;
+                    })
 
                 resultNotas.innerHTML = resultados;
+
             }
-
-
         }
 
 
