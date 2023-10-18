@@ -175,7 +175,13 @@
                                 aria-describedby="addon-wrapping" id="bim4">
                         </div>
                         <button onclick="notas()" style="margin-top: 20px;" class="btn btn-primary">Salvar</button>
+                        <button onclick="teste()" style="margin-top: 20px;" class="btn btn-primary">Mostrar todos os
+                            alunos</button>
+                        <button onclick="adicionaOutro()" style="margin-top: 20px;" class="btn btn-primary">Adicionar
+                            outro aluno</button>
+                        <p id="alerta3"></p>
                         <p id="resultNotas"></p>
+                        <p id="resultNotas2"></p>
                     </div>
                 </div>
             </div>
@@ -203,8 +209,9 @@
             select.appendChild(option);
         });
 
-        let materia = { id: 0, nome: "", notas: [], total: 0, printInfo: "", };
+
         let materias = [];
+        let users = [];
         let user = { nome: "", instituicao: "", curso: "", materia: [] };
 
         function aluno() {
@@ -216,9 +223,9 @@
             let checkboxCurso = document.getElementById('nomeCurso');
 
 
-            if(nomeAluno.value === ""){
+            if (nomeAluno.value === "") {
                 alerta2.innerHTML = " Digite o nome do Aluno"
-            } else if (!checkboxInstituicao.checked){
+            } else if (!checkboxInstituicao.checked) {
                 alerta2.innerHTML = " Marque a instituição"
             } else if (!checkboxCurso.checked) {
                 alerta2.innerHTML = "Marque o curso"
@@ -230,13 +237,11 @@
                 alunoDiv.style.display = 'none';
                 divBoletim.style.display = 'block'
             }
-
-            
-
         }
 
         function notas() {
 
+            let materia = { id: 0, nome: "", notas: [], total: 0, printInfo: "", };
             let inputNotas = [];
             let totalNotas = 0;
 
@@ -337,9 +342,6 @@
                     }
                 }
 
-                materias.forEach((e) => {
-                    user.materia.push(e);
-                });
 
                 materias.forEach((materia) => {
                     resultados += materia.info;
@@ -353,8 +355,85 @@
 
                 resultNotas.innerHTML = resultados;
 
+                if (materias.length === 6) {
+
+                    users.push({
+                        nome: user.nome,
+                        instituicao: user.instituicao,
+                        curso: user.curso,
+                        materia: materias
+                    })
+                }
+
             }
         }
+
+        
+
+        function adicionaOutro() {
+
+            if (materias.length === 6) {
+                nomeAluno.value = "";
+                user.nome = "";
+                user.instituicao = "";
+                user.curso = "";
+                user.materia = [];
+                document.getElementById('bim1').value = "";
+                document.getElementById('bim2').value = "";
+                document.getElementById('bim3').value = "";
+                document.getElementById('bim4').value = "";
+                resultNotas.innerHTML = "";
+
+
+                materias = [];
+ 
+                divAluno.style.display = 'block';
+                divBoletim.style.display = 'none';
+
+                alerta.innerHTML = "";
+                alerta2.innerHTML = "";
+                alerta3.innerHTML = "";
+                materias = [];
+                aluno();
+                notas();
+            } else {
+                alerta3.innerHTML = "Adicione todas as 6 materias";
+            }
+
+        }
+
+        function teste() {
+
+            resultNotas.innerHTML = "  "
+
+            users.forEach((aluno) => {
+                let resultados = `<b>BOLETIM DE: ${aluno.nome.toLocaleUpperCase()}</b><br><b>INSTITUIÇÃO/ESCOLA: ${aluno.instituicao.toLocaleUpperCase()} </b><br><b>CURSO: ${aluno.curso.toLocaleUpperCase()} </b>
+            <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th scope="col"></th>
+                                    <th scope="col">Primeiro Bimestre</th>
+                                    <th scope="col">Segundo Bimestre</th>
+                                    <th scope="col">Terceiro Bimestre</th>
+                                    <th scope="col">Quarto Bimestre</th>
+                                    <th scope="col">Nota Final</th>
+                                    <th scope="col">Situação</th>
+                                </tr>   
+                            </thead> <br>  <tbody>`;
+
+                aluno.materia.forEach((materia) => {
+                    resultados += materia.info;
+                });
+
+                resultNotas2.innerHTML += resultados;
+            })
+
+
+
+        }
+
+
+
 
 
         function verificaVazio(texto, texto2) {

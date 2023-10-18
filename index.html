@@ -14,6 +14,15 @@
 </head>
 
 <body>
+    <script> 
+        function darkMode() {
+        var element = document.body;
+        element.classList.toggle("dark-mode");
+    }
+
+    // arrumar cor dos texto la dentro depois
+</script>
+
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div class="container-fluid">
             <a class="navbar-brand" href="#inicio">
@@ -41,6 +50,17 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="#artigos">ARTIGOS</a>
+                        </li>
+                        <li>
+                        <form class="d-flex btn">
+                            <input type="checkbox" onclick="darkMode()" class="checkbox" id="chk" />
+                            <label class="label" for="chk">
+                              <i class="fas fa-moon"></i>
+                              <i class="fas fa-sun"></i>
+                              <div class="ball"></div>
+                            </label>
+                            <script src="https://kit.fontawesome.com/998c60ef77.js" crossorigin="anonymous"></script>
+                          </form>
                         </li>
                     </ul>
                 </div>
