@@ -347,16 +347,9 @@
                     resultados += materia.info;
                 })
 
-
-                // fazer array de alunos depois
-                // user.materia.forEach((materia) => {
-                //     resultados += materia.info;
-                // })
-
                 resultNotas.innerHTML = resultados;
 
                 if (materias.length === 6) {
-
                     users.push({
                         nome: user.nome,
                         instituicao: user.instituicao,
@@ -364,14 +357,12 @@
                         materia: materias
                     })
                 }
-
             }
         }
 
         
 
         function adicionaOutro() {
-
             if (materias.length === 6) {
                 nomeAluno.value = "";
                 user.nome = "";
@@ -383,8 +374,7 @@
                 document.getElementById('bim3').value = "";
                 document.getElementById('bim4').value = "";
                 resultNotas.innerHTML = "";
-
-
+                resultNotas2.innerHTML = "";
                 materias = [];
  
                 divAluno.style.display = 'block';
@@ -407,7 +397,7 @@
             resultNotas.innerHTML = "  "
 
             users.forEach((aluno) => {
-                let resultados = `<b>BOLETIM DE: ${aluno.nome.toLocaleUpperCase()}</b><br><b>INSTITUIÇÃO/ESCOLA: ${aluno.instituicao.toLocaleUpperCase()} </b><br><b>CURSO: ${aluno.curso.toLocaleUpperCase()} </b>
+                let resultados = `<details>  <summary><b>BOLETIM DE: ${aluno.nome.toLocaleUpperCase()}</b></summary><br><b>INSTITUIÇÃO/ESCOLA: ${aluno.instituicao.toLocaleUpperCase()} </b><br><b>CURSO: ${aluno.curso.toLocaleUpperCase()} </b>
             <table class="table table-striped">
                             <thead>
                                 <tr>
@@ -423,6 +413,7 @@
 
                 aluno.materia.forEach((materia) => {
                     resultados += materia.info;
+                    resultados += `</details>`
                 });
 
                 resultNotas2.innerHTML += resultados;
