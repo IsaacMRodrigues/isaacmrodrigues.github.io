@@ -153,33 +153,39 @@
                     <div style="margin-top: 50px; margin-left: 75px; max-width: 500px;" id="divBoletim">
                         <h3>Boletim</h3>
                         <div class="input-group mb-3">
-
-                            <select id="nomeMaterias" class="form-select">
-                            </select>
+                            <div id="divSelect">
+                                <select id="nomeMaterias" class="form-select">
+                                </select>
+                            </div>
                         </div>
                         <p id="alerta" style="color: red;"></p>
-                        <div class="input-group flex-nowrap">
-                            <span class="input-group-text" id="addon-wrapping">1º Bim</span>
-                            <input type="number" class="form-control" placeholder="Nota 1" aria-label="Nota 1"
-                                aria-describedby="addon-wrapping" id="bim1">
-                            <span class="input-group-text" id="addon-wrapping">2º Bim</span>
-                            <input type="number" class="form-control" placeholder="Nota 2" aria-label="Nota 2"
-                                aria-describedby="addon-wrapping" id="bim2">
+                        <div id="bimestres">
+                            <div class="input-group flex-nowrap" id="bims1">
+                                <span class="input-group-text" id="addon-wrapping">1º Bim</span>
+                                <input type="number" class="form-control" placeholder="Nota 1" aria-label="Nota 1"
+                                    aria-describedby="addon-wrapping" id="bim1">
+                                <span class="input-group-text" id="addon-wrapping">2º Bim</span>
+                                <input type="number" class="form-control" placeholder="Nota 2" aria-label="Nota 2"
+                                    aria-describedby="addon-wrapping" id="bim2">
+                            </div>
+                            <div class="input-group flex-nowrap" id="bims2">
+                                <span class="input-group-text" id="addon-wrapping">3º Bim</span>
+                                <input type="number" class="form-control" placeholder="Nota 3" aria-label="Nota 3"
+                                    aria-describedby="addon-wrapping" id="bim3">
+                                <span class="input-group-text" id="addon-wrapping">4º Bim</span>
+                                <input type="number" class="form-control" placeholder="Nota 4" aria-label="Nota 4"
+                                    aria-describedby="addon-wrapping" id="bim4">
+                            </div>
                         </div>
-                        <div class="input-group flex-nowrap">
-                            <span class="input-group-text" id="addon-wrapping">3º Bim</span>
-                            <input type="number" class="form-control" placeholder="Nota 3" aria-label="Nota 3"
-                                aria-describedby="addon-wrapping" id="bim3">
-                            <span class="input-group-text" id="addon-wrapping">4º Bim</span>
-                            <input type="number" class="form-control" placeholder="Nota 4" aria-label="Nota 4"
-                                aria-describedby="addon-wrapping" id="bim4">
-                        </div>
-                        <button onclick="notas()" style="margin-top: 20px;" class="btn btn-primary">Salvar</button>
-                        <button onclick="teste()" style="margin-top: 20px;" class="btn btn-primary">Mostrar todos os
+                        <button onclick="notas()" style="margin-top: 20px;" class="btn btn-primary"
+                            id="btnSalvar">Salvar</button>
+                        <button onclick="teste()" style="margin-top: 20px;" class="btn btn-primary"
+                            id="btnMostrar">Mostrar todos os
                             alunos</button>
-                        <button onclick="adicionaOutro()" style="margin-top: 20px;" class="btn btn-primary">Adicionar
+                        <button onclick="adicionaOutro()" style="margin-top: 20px;" class="btn btn-primary"
+                            id="btnAdicionar">Adicionar
                             outro aluno</button>
-                        <p id="alerta3"></p>
+                        <p id="alerta3" style="color: red;"></p>
                         <p id="resultNotas"></p>
                         <p id="resultNotas2"></p>
                     </div>
@@ -195,6 +201,8 @@
     <script>
 
         divBoletim.style.display = 'none';
+        btnAdicionar.style.display = 'none';
+        btnMostrar.style.display = 'none';
 
 
 
@@ -283,6 +291,8 @@
             }
 
             function mensagemValidaCampo(limite) {
+                alerta2.innerHTML = " "
+                alerta3.innerHTML = " "
                 if (limite === 20) {
                     alerta.innerHTML = "A Primeira nota deve ser um numero positivo até 20";
                 } else if (limite === 25) {
@@ -294,6 +304,8 @@
 
             function mensagemValidaMateria() {
                 alerta.innerHTML = "Essa matéria já foi adicionada!";
+                alerta2.innerHTML = " "
+                alerta3.innerHTML = " "
             }
 
             validarCampo(parseFloat(document.getElementById('bim1').value), 20)
@@ -350,6 +362,14 @@
                 resultNotas.innerHTML = resultados;
 
                 if (materias.length === 6) {
+
+                    divSelect.style.display = 'none';
+                    btnSalvar.style.display = 'none'
+                    btnAdicionar.style.display = 'block'
+                    btnMostrar.style.display = 'block'
+                    resultNotas.style.display = 'none';
+                    bimestres.style.display = 'none';
+
                     users.push({
                         nome: user.nome,
                         instituicao: user.instituicao,
@@ -360,10 +380,16 @@
             }
         }
 
-        
+
 
         function adicionaOutro() {
             if (materias.length === 6) {
+                resultNotas.style.display = 'block';
+                btnAdicionar.style.display = 'none'
+                btnMostrar.style.display = 'none'
+                divSelect.style.display = 'block';
+                btnSalvar.style.display = 'block';
+                bimestres.style.display = 'block';
                 nomeAluno.value = "";
                 user.nome = "";
                 user.instituicao = "";
@@ -376,7 +402,7 @@
                 resultNotas.innerHTML = "";
                 resultNotas2.innerHTML = "";
                 materias = [];
- 
+
                 divAluno.style.display = 'block';
                 divBoletim.style.display = 'none';
 
@@ -384,20 +410,23 @@
                 alerta2.innerHTML = "";
                 alerta3.innerHTML = "";
                 materias = [];
-                aluno();
-                notas();
+                divAluno.style.display = 'block'
             } else {
                 alerta3.innerHTML = "Adicione todas as 6 materias";
+                alerta.innerHTML = " ";
+                alerta2.innerHTML = " ";
             }
 
         }
 
         function teste() {
 
-            resultNotas.innerHTML = "  "
+            if (materias.length === 6) {
+                resultNotas.innerHTML = "  "
+                resultNotas2.innerHTML = "  "
 
-            users.forEach((aluno) => {
-                let resultados = `<details>  <summary><b>BOLETIM DE: ${aluno.nome.toLocaleUpperCase()}</b></summary><br><b>INSTITUIÇÃO/ESCOLA: ${aluno.instituicao.toLocaleUpperCase()} </b><br><b>CURSO: ${aluno.curso.toLocaleUpperCase()} </b>
+                users.forEach((aluno) => {
+                    let resultados = `<details>  <summary><b>${aluno.nome.toLocaleUpperCase()}</b></summary><br><b>INSTITUIÇÃO/ESCOLA: ${aluno.instituicao.toLocaleUpperCase()} </b><br><b>CURSO: ${aluno.curso.toLocaleUpperCase()} </b>
             <table class="table table-striped">
                             <thead>
                                 <tr>
@@ -411,13 +440,18 @@
                                 </tr>   
                             </thead> <br>  <tbody>`;
 
-                aluno.materia.forEach((materia) => {
-                    resultados += materia.info;
-                    resultados += `</details>`
-                });
+                    aluno.materia.forEach((materia) => {
+                        resultados += materia.info;
+                        resultados += `</details>`
+                    });
 
-                resultNotas2.innerHTML += resultados;
-            })
+                    resultNotas2.innerHTML += resultados;
+                })
+            } else {
+                alerta3.innerHTML = "Adicione todas as 6 materias";
+                alerta.innerHTML = " ";
+                alerta2.innerHTML = " ";
+            }
 
 
 
