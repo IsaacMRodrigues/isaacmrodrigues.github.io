@@ -141,7 +141,7 @@
                 <div class="tab-pane fade" id="t8" role="tabpanel" aria-labelledby="t8">
                     <div style="margin-top: 50px; margin-left: 75px; max-width: 500px;" id="divAluno">
                         <input type="text" class="form-control" placeholder="Digite o nome do aluno" id="nomeAluno">
-                        <input type="checkbox" id="nomeInstituicao" value="true">
+                        <input type="checkbox" id="nomeInstituicao">
                         <label for="nomeInstituicao">Senai</label>
                         <br>
                         <input type="checkbox" id="nomeCurso">
@@ -216,12 +216,12 @@
             let checkboxCurso = document.getElementById('nomeCurso');
 
 
-            //faltando arrumar o tratamento aqui
-
             if(nomeAluno.value === ""){
                 alerta2.innerHTML = " Digite o nome do Aluno"
-            } else if (document.getElementById('nomeInstituicao').value === "on"){
+            } else if (!checkboxInstituicao.checked){
                 alerta2.innerHTML = " Marque a instituição"
+            } else if (!checkboxCurso.checked) {
+                alerta2.innerHTML = "Marque o curso"
             } else {
                 user.nome = nomeAluno.value;
                 user.instituicao = checkboxInstituicao.checked ? checkboxInstituicao.nextElementSibling.textContent : '';;
