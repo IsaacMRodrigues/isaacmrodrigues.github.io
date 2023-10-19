@@ -14,59 +14,20 @@
 </head>
 
 <body>
-    <script> 
+    <!-- <script> 
         function darkMode() {
         var element = document.body;
         element.classList.toggle("dark-mode");
     }
 
     // arrumar cor dos texto la dentro depois
-</script>
+    </script> -->
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#inicio">
-                <img src="./src/images/svg20.png" class="logo-img" alt="Logo">
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
-                data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar"
-                aria-labelledby="offcanvasDarkNavbarLabel">
-                <div class="offcanvas-header">
-                    <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Menu</h5>
-                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
-                        aria-label="Close"></button>
-                </div>
-                <div class="offcanvas-body">
-                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#inicio">SOBRE</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#projetos">PROJETOS</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#artigos">ARTIGOS</a>
-                        </li>
-                        <!-- <li>
-                        <form class="d-flex btn">
-                            <input type="checkbox" onclick="darkMode()" class="checkbox" id="chk" />
-                            <label class="label" for="chk">
-                              <i class="fas fa-moon"></i>
-                              <i class="fas fa-sun"></i>
-                              <div class="ball"></div>
-                            </label>
-                            <script src="https://kit.fontawesome.com/998c60ef77.js" crossorigin="anonymous"></script>
-                          </form>
-                        </li> -->
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </nav>
+    <div id="headerElement">
+
+    </div>
+
+
     <section id="inicio" class="custom-letter-spacing">
         <div class="container center">
             <img src="./src/images/perfil.jpeg" class="perfil-img margin-topo4 img-fluid">
@@ -103,60 +64,60 @@
                         <h2 class="center">CONHECIMENTOS</h2>
                         </p>
                         <div class="row row-cols-1 row-cols-md-2 g-4 p-5 ">
-                        <div class="col-lg-6">
-                            <h6 class="center">Java</h6>
-                            <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="25"
-                                aria-valuemin="0" aria-valuemax="100">
-                                <div class="progress-bar" style="width:80%"></div>
+                            <div class="col-lg-6">
+                                <h6 class="center">Java</h6>
+                                <div class="progress" role="progressbar" aria-label="Example with label"
+                                    aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                                    <div class="progress-bar" style="width:80%"></div>
+                                </div>
+                                <br>
+                                <h6 class="center">SpringBoot</h6>
+                                <div class="progress" role="progressbar" aria-label="Example with label"
+                                    aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                                    <div class="progress-bar" style="width: 50%"></div>
+                                </div>
+                                <br>
+                                <h6 class="center">Banco de Dados</h6>
+                                <div class="progress" role="progressbar" aria-label="Example with label"
+                                    aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                                    <div class="progress-bar" style="width: 75%"></div>
+                                </div>
+                                <br>
+                                <h6 class="center">GIT</h6>
+                                <div class="progress" role="progressbar" aria-label="Example with label"
+                                    aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                                    <div class="progress-bar" style="width: 60%"></div>
+                                </div>
+                                <br>
                             </div>
-                            <br>
-                            <h6 class="center">SpringBoot</h6>
-                            <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="25"
-                                aria-valuemin="0" aria-valuemax="100">
-                                <div class="progress-bar" style="width: 50%"></div>
-                            </div>
-                            <br>
-                            <h6 class="center">Banco de Dados</h6>
-                            <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="25"
-                                aria-valuemin="0" aria-valuemax="100">
-                                <div class="progress-bar" style="width: 75%"></div>
-                            </div>
-                            <br>
-                            <h6 class="center">GIT</h6>
-                            <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="25"
-                                aria-valuemin="0" aria-valuemax="100">
-                                <div class="progress-bar" style="width: 60%"></div>
-                            </div>
-                            <br>
-                        </div>
-                        <div class="col-lg-6 justify-content-end">
-                            <h6 class="center">HTML</h6>
-                            <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="25"
-                                aria-valuemin="0" aria-valuemax="100">
-                                <div class="progress-bar" style="width: 70%"></div>
-                            </div>
-                            <br>
-                            <h6 class="center">CSS</h6>
-                            <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="25"
-                                aria-valuemin="0" aria-valuemax="100">
-                                <div class="progress-bar" style="width: 50%"></div>
-                            </div>
-                            <br>
-                            <h6 class="center">JavaScript</h6>
-                            <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="25"
-                                aria-valuemin="0" aria-valuemax="100">
-                                <div class="progress-bar" style="width: 35%"></div>
-                            </div>
-                            <br>
-                            <h6 class="center">Bootstrap</h6>
-                            <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="25"
-                                aria-valuemin="0" aria-valuemax="100">
-                                <div class="progress-bar" style="width: 25%"></div>
+                            <div class="col-lg-6 justify-content-end">
+                                <h6 class="center">HTML</h6>
+                                <div class="progress" role="progressbar" aria-label="Example with label"
+                                    aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                                    <div class="progress-bar" style="width: 70%"></div>
+                                </div>
+                                <br>
+                                <h6 class="center">CSS</h6>
+                                <div class="progress" role="progressbar" aria-label="Example with label"
+                                    aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                                    <div class="progress-bar" style="width: 50%"></div>
+                                </div>
+                                <br>
+                                <h6 class="center">JavaScript</h6>
+                                <div class="progress" role="progressbar" aria-label="Example with label"
+                                    aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                                    <div class="progress-bar" style="width: 35%"></div>
+                                </div>
+                                <br>
+                                <h6 class="center">Bootstrap</h6>
+                                <div class="progress" role="progressbar" aria-label="Example with label"
+                                    aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                                    <div class="progress-bar" style="width: 25%"></div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
 
             </div>
@@ -280,6 +241,8 @@
                     class="icon-contat icon-justify-contat"></a>
         </div>
     </div> -->
+
+    <script type="module" src="/script.js"></script>
 
 </body>
 
