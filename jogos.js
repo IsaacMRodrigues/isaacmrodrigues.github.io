@@ -82,32 +82,46 @@ function mostraComputador(){
 }
 
 
-// function mostraFilmes(){
+let filme = { nome: "", descricao: ""};
 
-//     jogos.forEach((joguin) => {
-//         listJogos.innerHTML += `
-//         <div class="card mb-3" style="max-width: 540px;">
-//             <div class="row g-0">
-//                 <div class="col-md-4">
-//                     <img src="${joguin.imagem}"
-//                         class="img-fluid rounded-start" alt="${joguin.nome}">
-//                 </div>
-//                 <div class="col-md-8">
-//                     <div class="card-body">
-//                         <h5 class="card-title">${joguin.nome}</h5>
-//                         <p class="card-text">${joguin.descricao}
-//                         </p>
-//                     </div>
-//                 </div>
-//             </div>
-//         </div>
-//     `
-//     })
+let filmes = [];
+
+
+filmes.push({
+    nome: "Interestelar",
+    descricao: "As reservas naturais da Terra estão chegando ao fim e um grupo de astronautas recebe a missão de verificar possíveis planetas para receberem a população mundial, possibilitando a continuação da espécie. Cooper é chamado para liderar o grupo e aceita a missão sabendo que pode nunca mais ver os filhos. Ao lado de Brand, Jenkins e Doyle, ele seguirá em busca de um novo lar."
+})
+
+filmes.push({
+    nome: "Ilha do Medo",
+    descricao: "Teddy Daniels (Leonardo DiCaprio) investiga o desaparecimento de um paciente no Shutter Island Ashecliffe Hospital, em Boston. No local, ele descobre que os médicos realizam experiências radicais com os pacientes, envolvendo métodos ilegais e anti-éticos. Teddy tenta buscar mais informações, mas enfrenta a resistência dos médicos em lhe fornecer os arquivos que possam permitir que o caso seja aberto. Quando um furacão deixa a ilha sem comunicação, diversos prisioneiros conseguem escapar e tornam a situação ainda mais perigosa."
+})
+
+filmes.push({
+    nome: "Tenet",
+    descricao: "Um agente da CIA conhecido como O Protagonista (John David Washington) é recrutado por uma organização misteriosa, chamada Tenet, para participar de uma missão de escala global. Eles precisam impedir que Andrei Sator (Kenneth Branagh), um renegado oligarca russo com meios de se comunicar com o futuro, inicie a Terceira Guerra Mundial. A organização está em posse de uma arma de fogo que consegue fazer o tempo correr ao contrário, acreditando que o objeto veio do futuro."
+})
+
+ function mostraFilmes(){
+    filmes.forEach((film) => {
+        listFilmes.innerHTML += `
+                     <div class="row row-cols-1 row-cols-md-1 g-4 p-5">
+                        <div class="col mt-5">
+                            <div class="card">
+                                <div class="card-body">
+                                    <p>
+                                    <h2>${film.nome}</h2>
+                                    </p>
+                                    ${film.descricao}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    `
+    })
 
     
-// }
+}
 
 
-export { mostraJogos, mostraComputador };
-
-// export default mostraJogos();
+export { mostraJogos, mostraFilmes, mostraComputador };
