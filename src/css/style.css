@@ -26,8 +26,41 @@ nav{
   display: flex;
 }
 
+@media only screen and (min-width: 600px) {
+  .mobile-margin {
+    margin-left: 350px;
+  }
+
+  .mobile-m-t {
+    margin-top: 75px;
+  }
+  .mobile-c-m {
+    margin-left: 300px;
+  }
+}
+
+/* Consulta de mídia para telas menores que 600 pixels (ajuste conforme necessário) */
+@media only screen and (max-width: 600px) {
+  .mobile-margin {
+    margin-left: 10%;
+  }
+
+  .mobile-m-t {
+    margin-top: 0px;
+  }
+
+  .mobile-m-2 {
+    margin-left: 3%;
+  }
+
+  .mobile-m-5 {
+    margin-left: 6%;
+  }
+
+}
+
 @media (max-width: 768px) {
-  section {
+  section, .classcelular {
     height: auto;
     width: 100%;
     margin: 0;
