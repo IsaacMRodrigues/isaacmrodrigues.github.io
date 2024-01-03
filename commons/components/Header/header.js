@@ -3,16 +3,16 @@ function header() {
 
   let inicio;
   let projetos;
-  let artigos;
+  let conhecimentos;
 
   if (currentPagePath.includes("/index.html")) {
     inicio = "#inicio";
     projetos = "#projetos"
-    artigos = "#artigos"
+    conhecimentos = "#conhecimentos"
   } else {
     inicio = "/index.html#inicio";
     projetos = "/index.html#projetos";
-    artigos = "/index.html#artigos";
+    conhecimentos = "/index.html#conhecimentos";
   }
 
   headerElement.innerHTML = `
@@ -40,11 +40,12 @@ function header() {
                       <a class="nav-link active" aria-current="page" href=${inicio}>SOBRE</a>
                   </li>
                   <li class="nav-item">
-                      <a class="nav-link active" aria-current="page" href=${projetos}>PROJETOS</a>
+                      <a class="nav-link active" aria-current="page" href=${conhecimentos}>CONHECIMENTOS</a>
                   </li>
                   <li class="nav-item">
-                      <a class="nav-link active" aria-current="page" href=${artigos}>ARTIGOS</a>
+                      <a class="nav-link active" aria-current="page" href=${projetos}>PROJETOS</a>
                   </li>
+                  
                   <!-- <li>
               <form class="d-flex btn">
                   <input type="checkbox" onclick="darkMode()" class="checkbox" id="chk" />
