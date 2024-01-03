@@ -13,7 +13,7 @@
 <body>
     <div id="headerElement"></div>
     <div class="row">
-        <div class="col-2">
+        <div class="col-4">
             <div class="list-group" id="list-tab" role="tablist" style="margin-top: 150px;
             margin-left: 15px;">
                 <a class="list-group-item list-group-item-action active" id="list-home-list" data-bs-toggle="list"
@@ -35,11 +35,11 @@
                 <a class="list-group-item" id="list-messages-list" href="/index.html#projetos">Voltar</a>
             </div>
         </div>
-        <div class="col-10">
+        <div class="col-8">
             <div class="tab-content" id="nav-tabContent" style="margin-top: 150px;
-            margin-left: 15px;">
+            ">
                 <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="t1">
-                    <div style="margin-top: 50px; margin-left: 75px; max-width: 400px; ">
+                    <div style="margin-top: 50px; margin-left: 5px; max-width: 400px; ">
                         <h3>Verificar idade</h3>
                         <input type="number" class="form-control" placeholder="Digite sua idade" id="idade">
                         <button onclick="salvarIdade()" style="margin-top: 20px;"
@@ -48,7 +48,7 @@
                     </div>
                 </div>
                 <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="t2">
-                    <div style="margin-top: 50px; margin-left: 75px; max-width: 400px; ">
+                    <div style="margin-top: 50px; margin-left: 5px; max-width: 400px; ">
                         <h3>Comparar numeros</h3>
                         <input type="number" class="form-control" placeholder="Digite o primero numero" id="comparar">
                         <input type="number" class="form-control" placeholder="Digite o segundo numero" id="comparar2"
@@ -59,7 +59,7 @@
                     </div>
                 </div>
                 <div class="tab-pane fade" id="list-messages" role="tabpanel" aria-labelledby="t3">
-                    <div style="margin-top: 50px; margin-left: 75px; max-width: 400px; ">
+                    <div style="margin-top: 50px; margin-left: 5px; max-width: 400px; ">
                         <h3>Verificar se é divisivel</h3>
                         <input type="number" class="form-control" placeholder="Digite o primero numero" id="divisivel">
                         <input type="number" class="form-control" placeholder="Digite o segundo numero" id="divisivel2"
@@ -70,7 +70,7 @@
                     </div>
                 </div>
                 <div class="tab-pane fade" id="list-settings" role="tabpanel" aria-labelledby="t4">
-                    <div style="margin-top: 50px; margin-left: 75px; max-width: 400px; ">
+                    <div style="margin-top: 50px; margin-left: 5px; max-width: 400px; ">
                         <h3>Verificar Temperatura</h3>
                         <input type="number" class="form-control" placeholder="Digite a temperatura" id="temperatura">
                         <button onclick="verificaTemperatura()" style="margin-top: 20px;"
@@ -79,7 +79,7 @@
                     </div>
                 </div>
                 <div class="tab-pane fade" id="t5" role="tabpanel" aria-labelledby="t5">
-                    <div style="margin-top: 50px; margin-left: 75px; max-width: 400px; ">
+                    <div style="margin-top: 50px; margin-left: 5px; max-width: 400px; ">
                         <h3>Fatorial</h3>
                         <input type="number" class="form-control" placeholder="Digite um numero para fatorar"
                             id="fatorial">
@@ -88,7 +88,7 @@
                     </div>
                 </div>
                 <div class="tab-pane fade" id="t6" role="tabpanel" aria-labelledby="t6">
-                    <div style="margin-top: 50px; margin-left: 75px; max-width: 400px; ">
+                    <div style="margin-top: 50px; margin-left: 5px; max-width: 400px; ">
                         <h3>Contagem Regressiva</h3>
                         <input type="number" class="form-control" placeholder="Digite o numero para contagem regressiva"
                             id="regressiva">
@@ -98,7 +98,7 @@
                     </div>
                 </div>
                 <div class="tab-pane fade" id="t7" role="tabpanel" aria-labelledby="t7">
-                    <div style="margin-top: 50px; margin-left: 75px; max-width: 400px; ">
+                    <div style="margin-top: 50px; margin-left: 5px; max-width: 400px; ">
                         <h3>Tabuada</h3>
                         <input type="number" class="form-control" placeholder="Digite o numero para fazer a tabuada"
                             id="tabuada">
@@ -106,8 +106,8 @@
                         <p id="resultTabuada"></p>
                     </div>
                 </div>
-                <div class="tab-pane fade" id="t8" role="tabpanel" aria-labelledby="t8" style="margin-left: 50px;">
-                    <div style="margin-top: 50px; margin-left: 75px; max-width: 500px;" id="divAluno">
+                <div class="tab-pane fade" id="t8" role="tabpanel" aria-labelledby="t8">
+                    <div style="margin-top: 50px; margin-left: 5px; max-width: 500px;" id="divAluno">
                         <input type="text" class="form-control" placeholder="Digite o nome do aluno" id="nomeAluno">
                         <input type="checkbox" id="nomeInstituicao">
                         <label for="nomeInstituicao">Senai</label>
@@ -118,7 +118,7 @@
                         <button onclick="aluno()" style="margin-top: 20px;" class="btn btn-primary">Salvar</button>
                         <p id="alerta2" style="color: red;"></p>
                     </div>
-                    <div style="margin-top: 50px; margin-left: 75px; max-width: 500px;" id="divBoletim">
+                    <div style="margin-top: 50px; max-width: 500px;" id="divBoletim">
                         <h3>Boletim</h3>
                         <div class="input-group mb-3">
                             <div id="divSelect">
@@ -221,7 +221,8 @@
             let inputNotas = [];
             let totalNotas = 0;
 
-            let resultados = `<b>BOLETIM DE: ${user.nome.toLocaleUpperCase()}</b><br><b>INSTITUIÇÃO/ESCOLA: ${user.instituicao.toLocaleUpperCase()} </b><br><b>CURSO: ${user.curso.toLocaleUpperCase()} </b>
+            let resultados = `<div class="row row-cols-1 row-cols-md-2 g-4 p-5 ">
+            <div class="col"> <b>BOLETIM DE: ${user.nome.toLocaleUpperCase()}</b><br><b>INSTITUIÇÃO/ESCOLA: ${user.instituicao.toLocaleUpperCase()} </b><br><b>CURSO: ${user.curso.toLocaleUpperCase()} </b>
             <table class="table table-striped">
                             <thead>
                                 <tr>
